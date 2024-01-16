@@ -19,6 +19,7 @@
 		36C3003B2B563FC10003CBA1 /* AnimalLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3003A2B563FC10003CBA1 /* AnimalLibraryTests.swift */; };
 		36C300452B563FC10003CBA1 /* AnimalLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300442B563FC10003CBA1 /* AnimalLibraryUITests.swift */; };
 		36C300472B563FC10003CBA1 /* AnimalLibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300462B563FC10003CBA1 /* AnimalLibraryUITestsLaunchTests.swift */; };
+		36C300562B5645BE0003CBA1 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300552B5645BE0003CBA1 /* Then.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		36C300402B563FC10003CBA1 /* AnimalLibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalLibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C300442B563FC10003CBA1 /* AnimalLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalLibraryUITests.swift; sourceTree = "<group>"; };
 		36C300462B563FC10003CBA1 /* AnimalLibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalLibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		36C300552B5645BE0003CBA1 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +119,6 @@
 				5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */,
 				7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +147,7 @@
 		36C3001F2B563FC00003CBA1 /* AnimalLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				36C300532B5645A50003CBA1 /* Components */,
 				36C300202B563FC00003CBA1 /* AppDelegate.swift */,
 				36C300222B563FC00003CBA1 /* SceneDelegate.swift */,
 				36C300242B563FC00003CBA1 /* ViewController.swift */,
@@ -173,6 +175,22 @@
 				36C300462B563FC10003CBA1 /* AnimalLibraryUITestsLaunchTests.swift */,
 			);
 			path = AnimalLibraryUITests;
+			sourceTree = "<group>";
+		};
+		36C300532B5645A50003CBA1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				36C300542B5645AD0003CBA1 /* Vendors */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		36C300542B5645AD0003CBA1 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				36C300552B5645BE0003CBA1 /* Then.swift */,
+			);
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +417,7 @@
 				36C300252B563FC00003CBA1 /* ViewController.swift in Sources */,
 				36C3002B2B563FC00003CBA1 /* AnimalLibrary.xcdatamodeld in Sources */,
 				36C300212B563FC00003CBA1 /* AppDelegate.swift in Sources */,
+				36C300562B5645BE0003CBA1 /* Then.swift in Sources */,
 				36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
