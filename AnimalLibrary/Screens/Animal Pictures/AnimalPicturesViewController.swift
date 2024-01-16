@@ -12,14 +12,13 @@ final class AnimalPicturesViewController: ViewController {
     
     // MARK: - UI Properties
     
-    let scrollView = UIScrollView().then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    private(set) lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
+        $0.backgroundColor = .white
+        $0.separatorStyle = .none
+        $0.register(headerFooter: AnimalPicturesHeaderView.self)
+        $0.delegate = self
+        $0.dataSource = self
     }
-    let stackView = UIStackView().then {
-        $0.axis = .vertical
-        $0.spacing = 16
-    }
-    let detailView = AnimalDetailView()
     
     let viewModel: AnimalPicturesViewModel
     
@@ -39,24 +38,45 @@ final class AnimalPicturesViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        detailView.updateUI(animal: viewModel.animal)
     }
     
     // MARK: - Private Methods
     
     private func configureUI() {
         title = viewModel.animal.name
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        view.addSubviews(tableView)
+        tableView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension AnimalPicturesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: AnimalPicturesHeaderView.cellIdentifier) as? AnimalPicturesHeaderView
+        header?.updateUI(animal: viewModel.animal)
         
-        scrollView.addSubview(stackView)
-        stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.width.equalTo(view)
-        }
-        stackView.addArrangedSubview(detailView)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }

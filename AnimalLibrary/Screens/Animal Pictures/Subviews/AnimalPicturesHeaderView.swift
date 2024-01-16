@@ -1,5 +1,5 @@
 //
-//  AnimalDetailView.swift
+//  AnimalPicturesHeaderView.swift
 //  AnimalLibrary
 //
 //  Created by Muhammad Affan on 16/01/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class AnimalDetailView: UIStackView {
+final class AnimalPicturesHeaderView: UITableViewHeaderFooterView {
     
     // MARK: - UI Properties
     
@@ -16,30 +16,35 @@ final class AnimalDetailView: UIStackView {
     let locationsView = ItemView()
     let sizeView = ItemView()
     let lifespanView = ItemView()
-    let lineView = UIView().then {
-        $0.backgroundColor = .gray
+    let stackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 8
+        $0.distribution = .fill
+        $0.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
+        $0.isLayoutMarginsRelativeArrangement = true
     }
     
-    // MARK: Initialized
+    // MARK: - Initialized
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         configureUI()
     }
     
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureUI()
     }
     
     // MARK: - Private Methods
     
     private func configureUI() {
-        axis = .vertical
-        spacing = 8
-        distribution = .fill
-        layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
-        isLayoutMarginsRelativeArrangement = true
-        addArrangedSubviews(nameView, locationsView, lifespanView, sizeView)
+        backgroundColor = .white
+        addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        stackView.addArrangedSubviews(nameView, locationsView, lifespanView, sizeView)
     }
     
     // MARK: - Internal Methods
