@@ -43,6 +43,10 @@
 		36C3008E2B566B750003CBA1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3008D2B566B750003CBA1 /* ViewModel.swift */; };
 		36C300912B566CA40003CBA1 /* AnimalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300902B566CA40003CBA1 /* AnimalListItemCell.swift */; };
 		36C300932B566E0A0003CBA1 /* ReusableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300922B566E0A0003CBA1 /* ReusableViewCell.swift */; };
+		36C3009A2B5670B70003CBA1 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C300962B5670B70003CBA1 /* Poppins-Bold.ttf */; };
+		36C3009B2B5670B70003CBA1 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C300972B5670B70003CBA1 /* Poppins-Medium.ttf */; };
+		36C3009C2B5670B70003CBA1 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C300982B5670B70003CBA1 /* Poppins-Regular.ttf */; };
+		36C3009D2B5670B70003CBA1 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36C300992B5670B70003CBA1 /* Poppins-SemiBold.ttf */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +108,10 @@
 		36C3008D2B566B750003CBA1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		36C300902B566CA40003CBA1 /* AnimalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListItemCell.swift; sourceTree = "<group>"; };
 		36C300922B566E0A0003CBA1 /* ReusableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewCell.swift; sourceTree = "<group>"; };
+		36C300962B5670B70003CBA1 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		36C300972B5670B70003CBA1 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		36C300982B5670B70003CBA1 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		36C300992B5670B70003CBA1 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,12 +209,11 @@
 				36C300652B5647A30003CBA1 /* Network */,
 				36C3007B2B5658630003CBA1 /* Models */,
 				36C300622B5647570003CBA1 /* DI */,
+				36C300942B56706B0003CBA1 /* Resources */,
 				36C300202B563FC00003CBA1 /* AppDelegate.swift */,
 				36C300222B563FC00003CBA1 /* SceneDelegate.swift */,
 				36C300262B563FC00003CBA1 /* Main.storyboard */,
-				36C3002C2B563FC10003CBA1 /* Assets.xcassets */,
 				36C3002E2B563FC10003CBA1 /* LaunchScreen.storyboard */,
-				36C300312B563FC10003CBA1 /* Info.plist */,
 				36C300292B563FC00003CBA1 /* AnimalLibrary.xcdatamodeld */,
 			);
 			path = AnimalLibrary;
@@ -358,6 +365,27 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		36C300942B56706B0003CBA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36C300952B5670A30003CBA1 /* Fonts */,
+				36C3002C2B563FC10003CBA1 /* Assets.xcassets */,
+				36C300312B563FC10003CBA1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36C300952B5670A30003CBA1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				36C300962B5670B70003CBA1 /* Poppins-Bold.ttf */,
+				36C300972B5670B70003CBA1 /* Poppins-Medium.ttf */,
+				36C300982B5670B70003CBA1 /* Poppins-Regular.ttf */,
+				36C300992B5670B70003CBA1 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -467,8 +495,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C300302B563FC10003CBA1 /* LaunchScreen.storyboard in Resources */,
+				36C3009D2B5670B70003CBA1 /* Poppins-SemiBold.ttf in Resources */,
 				36C3002D2B563FC10003CBA1 /* Assets.xcassets in Resources */,
 				36C300282B563FC00003CBA1 /* Main.storyboard in Resources */,
+				36C3009C2B5670B70003CBA1 /* Poppins-Regular.ttf in Resources */,
+				36C3009A2B5670B70003CBA1 /* Poppins-Bold.ttf in Resources */,
+				36C3009B2B5670B70003CBA1 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,12 +823,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AnimalLibrary/Info.plist;
+				INFOPLIST_FILE = AnimalLibrary/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -820,12 +852,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AnimalLibrary/Info.plist;
+				INFOPLIST_FILE = AnimalLibrary/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
