@@ -10,6 +10,15 @@ struct AnimalResponse: Codable {
     let taxonomy: AnimalTaxonomyResponse?
     let locations: [String]
     let characteristics: AnimalCharacteristicsResponse
+    
+    enum CodingKeys: String, CodingKey {
+        case name, taxonomy, locations, characteristics
+    }
+    
+    var size: String {
+        let sizes: [String?] = [characteristics.weight, characteristics.height, characteristics.length]
+        return sizes.compactMap { $0 }.joined(separator: ", ")
+    }
 }
 
 struct AnimalTaxonomyResponse: Codable {
@@ -32,9 +41,10 @@ struct AnimalCharacteristicsResponse: Codable {
     let lifespan: String
     let weight: String?
     let height: String?
+    let length: String?
     
     enum CodingKeys: String, CodingKey {
-        case habitat, lifespan, weight, height
+        case habitat, lifespan, weight, height, length
     }
 }
 

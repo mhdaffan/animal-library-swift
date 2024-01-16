@@ -37,6 +37,8 @@ final class AnimalListItemCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private Methods
+    
     private func configureUI() {
         selectionStyle = .none
         contentView.addSubviews(nameLabel, locationLabel, lineView)
@@ -55,6 +57,8 @@ final class AnimalListItemCell: UITableViewCell {
             $0.height.equalTo(1)
         }
     }
+    
+    // MARK: - Internal Methods
     
     func updateUI(animal: AnimalResponse) {
         nameLabel.text = animal.name

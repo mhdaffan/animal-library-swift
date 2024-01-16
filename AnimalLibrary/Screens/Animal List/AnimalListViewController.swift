@@ -76,7 +76,7 @@ final class AnimalListViewController: ViewController {
 extension AnimalListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        navigationController?.pushViewController(AnimalPicturesViewController.build(animal: viewModel.animals[indexPath.row]), animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
