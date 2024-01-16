@@ -39,6 +39,8 @@ final class AnimalPicturesViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        addViewModelObservers()
+        viewModel.fetchPhotos()
     }
     
     // MARK: - Private Methods
@@ -48,6 +50,20 @@ final class AnimalPicturesViewController: ViewController {
         view.addSubviews(tableView)
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    private func addViewModelObservers() {
+        viewModel.onStateChanged = { [weak self] state in
+            self?.tableView.loadingIndicator(isLoading: state.isLoading())
+            switch state {
+            case .loaded:
+                self?.tableView.reloadData()
+            case .failed(let error):
+                print(error.localizedDescription)
+            default:
+                break
+            }
         }
     }
     
@@ -69,12 +85,16 @@ extension AnimalPicturesViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.photo.photos.count
+        return viewModel.photo?.photos.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let photos = viewModel.photo?.photos else {
+            return UITableViewCell()
+        }
+        
         let cell = tableView.dequeueReusableCell(for: indexPath, cell: AnimalPicturesItemCell.self)
-        cell.updateUI(photo: viewModel.photo.photos[indexPath.row])
+        cell.updateUI(photo: photos[indexPath.row])
         
         return cell
     }

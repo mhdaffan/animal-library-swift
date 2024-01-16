@@ -66,7 +66,7 @@ final class AnimalPicturesItemCell: UITableViewCell {
     func updateUI(photo: PhotoResponse) {
         photographerLabel.text = "by " + photo.photographer
         altLabel.text = photo.alt
-        photoImageView.load(photo.src.landscape, placeholder: nil, contentMode: .scaleAspectFit)
+        photoImageView.load(photo.src.landscape, placeholder: .icEmpty, contentMode: .scaleAspectFit)
     }
     
 }
