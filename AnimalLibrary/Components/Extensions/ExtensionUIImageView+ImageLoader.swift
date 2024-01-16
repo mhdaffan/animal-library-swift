@@ -1,0 +1,36 @@
+//
+//  ExtensionUIImageView+ImageLoader.swift
+//  AnimalLibrary
+//
+//  Created by Muhammad Affan on 16/01/24.
+//
+
+import UIKit
+import Kingfisher
+
+extension UIImageView {
+    
+    /// load image assets from url
+    /// - Parameters:
+    ///   - urlString: image url string
+    ///   - placeholder: placeholder during retrieving image and failure
+    ///   - contentMode: image's content mode when success
+    func load(_ urlString: String, placeholder: UIImage? = nil, contentMode: UIView.ContentMode = .scaleAspectFill) {
+        var newUrl = urlString
+        if let url = newUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            newUrl = url
+        }
+        
+        let url = URL(string: newUrl)
+        
+        self.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(0.2))], completionHandler: { result in
+            switch result {
+            case .success(_):
+                self.contentMode = contentMode
+            case .failure(_):
+                self.contentMode = .center
+            }
+        })
+    }
+    
+}
