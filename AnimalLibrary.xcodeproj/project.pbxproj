@@ -58,6 +58,7 @@
 		36C300B72B5698120003CBA1 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300B62B5698120003CBA1 /* PhotoResponse.swift */; };
 		36C300B92B56987F0003CBA1 /* PhotoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300B82B56987F0003CBA1 /* PhotoEndpoint.swift */; };
 		36C300BB2B5699090003CBA1 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300BA2B5699090003CBA1 /* PhotoRepository.swift */; };
+		36C300BD2B56999F0003CBA1 /* PhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300BC2B56999F0003CBA1 /* PhotoUseCase.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		36C300B62B5698120003CBA1 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		36C300B82B56987F0003CBA1 /* PhotoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEndpoint.swift; sourceTree = "<group>"; };
 		36C300BA2B5699090003CBA1 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
+		36C300BC2B56999F0003CBA1 /* PhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUseCase.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				36C300822B5669FF0003CBA1 /* AnimalUseCase.swift */,
+				36C300BC2B56999F0003CBA1 /* PhotoUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */,
 				36C3008B2B566A940003CBA1 /* AnimalListViewModel.swift in Sources */,
 				36C300A02B5671E00003CBA1 /* FontConstants.swift in Sources */,
+				36C300BD2B56999F0003CBA1 /* PhotoUseCase.swift in Sources */,
 				36C300A22B5673B20003CBA1 /* ScreenState.swift in Sources */,
 				36C300832B5669FF0003CBA1 /* AnimalUseCase.swift in Sources */,
 				36C3007A2B5655150003CBA1 /* AnimalRepository.swift in Sources */,
