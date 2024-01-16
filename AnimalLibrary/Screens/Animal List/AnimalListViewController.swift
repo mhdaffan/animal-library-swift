@@ -41,6 +41,8 @@ final class AnimalListViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        addViewModelObservers()
+        viewModel.fetchAnimalList()
     }
     
     // MARK: - Internal Methods
@@ -50,6 +52,19 @@ final class AnimalListViewController: ViewController {
         view.addSubviews(tableView)
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    private func addViewModelObservers() {
+        viewModel.onStateChanged = { [weak self] state in
+            switch state {
+            case .failed(let error):
+                print(error.localizedDescription)
+            case .loaded:
+                self?.tableView.reloadData()
+            default:
+                break
+            }
         }
     }
     
@@ -64,11 +79,12 @@ extension AnimalListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.animals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cell: AnimalListItemCell.self)
+        cell.updateUI(animal: viewModel.animals[indexPath.row])
         
         return cell
     }

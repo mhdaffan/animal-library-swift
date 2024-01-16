@@ -6,5 +6,5 @@
 //
 
 class ViewModel {
-    
+    var onStateChanged: ((ScreenState) -> Void)?
 }
