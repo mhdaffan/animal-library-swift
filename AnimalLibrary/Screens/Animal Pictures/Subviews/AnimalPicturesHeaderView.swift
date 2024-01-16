@@ -18,7 +18,7 @@ final class AnimalPicturesHeaderView: UITableViewHeaderFooterView {
     let lifespanView = ItemView()
     let stackView = UIStackView().then {
         $0.axis = .vertical
-        $0.spacing = 8
+        $0.spacing = 4
         $0.distribution = .fill
         $0.layoutMargins = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
         $0.isLayoutMarginsRelativeArrangement = true
@@ -40,7 +40,7 @@ final class AnimalPicturesHeaderView: UITableViewHeaderFooterView {
     
     private func configureUI() {
         backgroundColor = .white
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

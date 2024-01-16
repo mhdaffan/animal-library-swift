@@ -15,6 +15,7 @@ final class AnimalPicturesViewController: ViewController {
     private(set) lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .white
         $0.separatorStyle = .none
+        $0.register(cell: AnimalPicturesItemCell.self)
         $0.register(headerFooter: AnimalPicturesHeaderView.self)
         $0.delegate = self
         $0.dataSource = self
@@ -68,11 +69,14 @@ extension AnimalPicturesViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.photo.photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(for: indexPath, cell: AnimalPicturesItemCell.self)
+        cell.updateUI(photo: viewModel.photo.photos[indexPath.row])
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

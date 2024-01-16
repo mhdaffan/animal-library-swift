@@ -54,6 +54,8 @@
 		36C300AC2B5681FC0003CBA1 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300AB2B5681FC0003CBA1 /* ItemView.swift */; };
 		36C300AE2B5684120003CBA1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300AD2B5684120003CBA1 /* AppConstants.swift */; };
 		36C300B12B568B160003CBA1 /* AnimalPicturesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300B02B568B160003CBA1 /* AnimalPicturesHeaderView.swift */; };
+		36C300B32B568CEB0003CBA1 /* AnimalPicturesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300B22B568CEB0003CBA1 /* AnimalPicturesItemCell.swift */; };
+		36C300B72B5698120003CBA1 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300B62B5698120003CBA1 /* PhotoResponse.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		36C300AB2B5681FC0003CBA1 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		36C300AD2B5684120003CBA1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		36C300B02B568B160003CBA1 /* AnimalPicturesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPicturesHeaderView.swift; sourceTree = "<group>"; };
+		36C300B22B568CEB0003CBA1 /* AnimalPicturesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPicturesItemCell.swift; sourceTree = "<group>"; };
+		36C300B62B5698120003CBA1 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				36C3007D2B5658700003CBA1 /* AnimalResponse.swift */,
+				36C300B62B5698120003CBA1 /* PhotoResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				36C300B02B568B160003CBA1 /* AnimalPicturesHeaderView.swift */,
+				36C300B22B568CEB0003CBA1 /* AnimalPicturesItemCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				36C300912B566CA40003CBA1 /* AnimalListItemCell.swift in Sources */,
 				36C3005F2B5646480003CBA1 /* ExtensionString.swift in Sources */,
 				36C3006F2B564A820003CBA1 /* NetworkInjectionKey.swift in Sources */,
+				36C300B72B5698120003CBA1 /* PhotoResponse.swift in Sources */,
 				36C3005D2B56463B0003CBA1 /* ExtensionData.swift in Sources */,
 				36C300802B5658BC0003CBA1 /* RepositoryInjectionkey.swift in Sources */,
 				36C300772B5654CE0003CBA1 /* AnimalEndpoint.swift in Sources */,
@@ -699,6 +706,7 @@
 				36C300AC2B5681FC0003CBA1 /* ItemView.swift in Sources */,
 				36C300892B566A8C0003CBA1 /* AnimalListViewController.swift in Sources */,
 				36C300712B564AEC0003CBA1 /* DataTransferService.swift in Sources */,
+				36C300B32B568CEB0003CBA1 /* AnimalPicturesItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
