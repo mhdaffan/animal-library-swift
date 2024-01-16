@@ -53,7 +53,10 @@ final class AnimalPicturesHeaderView: UITableViewHeaderFooterView {
         let titleWidth: CGFloat = 100
         nameView.updateUI(title: "Name", description: animal.name, titleWidth: titleWidth)
         locationsView.updateUI(title: "Locations", description: animal.locations.joined(separator: ", "), titleWidth: titleWidth)
-        lifespanView.updateUI(title: "Lifespan", description: animal.characteristics.lifespan, titleWidth: titleWidth)
+        if let lifespan = animal.characteristics.lifespan {
+            lifespanView.updateUI(title: "Lifespan", description: lifespan, titleWidth: titleWidth)
+        }
+        
         sizeView.updateUI(title: "Size", description: animal.size, titleWidth: titleWidth)
     }
     

@@ -5,16 +5,38 @@
 //  Created by Muhammad Affan on 16/01/24.
 //
 
+import Foundation
+
 protocol AnimalUseCase {
-    func search(name: String, completion: @escaping ((Result<[AnimalResponse], Error>) -> Void))
+    func fetchAnimalList(animals: [String], completion: @escaping ((Result<[AnimalGroup], Error>) -> Void))
 }
 
 struct AnimalUseCaseImpl: AnimalUseCase {
     
     @Injected(\.animalRepository) var repo: AnimalRepository
     
-    func search(name: String, completion: @escaping ((Result<[AnimalResponse], Error>) -> Void)) {
-        return repo.search(name: name, completion: completion)
+    func fetchAnimalList(animals: [String], completion: @escaping ((Result<[AnimalGroup], Error>) -> Void)) {
+        var animalGroup: [AnimalGroup] = []
+        
+        let group = DispatchGroup()
+        animals.forEach { animal in
+            group.enter()
+            repo.search(name: animal) { result in
+                switch result {
+                case .success(let response):
+                    if !response.isEmpty {
+                        animalGroup.append(.init(name: animal, kinds: response))
+                    }
+                case .failure:
+                    break
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            completion(.success(animalGroup))
+        }
     }
     
 }

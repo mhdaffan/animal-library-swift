@@ -16,11 +16,13 @@ final class AnimalPicturesItemCell: UITableViewCell {
         $0.textColor = .black
         $0.font = .poppinsRegular(12)
         $0.numberOfLines = 0
+        $0.backgroundColor = .white
     }
     let altLabel = UILabel().then {
         $0.textColor = .darkGray
         $0.font = .poppinsMedium(14)
         $0.numberOfLines = 0
+        $0.backgroundColor = .white
     }
     let photoImageView = UIImageView().then {
         $0.layer.cornerRadius = 8

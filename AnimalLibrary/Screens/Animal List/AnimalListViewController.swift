@@ -12,13 +12,11 @@ final class AnimalListViewController: ViewController {
     
     // MARK: - UI Properties
     
-    private(set) lazy var searchController = UISearchController().then {
-        $0.searchBar.placeholder = "Search"
-    }
     private(set) lazy var tableView = UITableView().then {
         $0.backgroundColor = .white
         $0.separatorStyle = .none
         $0.register(cell: AnimalListItemCell.self)
+        $0.register(headerFooter: AnimalListHeaderView.self)
         $0.delegate = self
         $0.dataSource = self
     }
@@ -48,10 +46,9 @@ final class AnimalListViewController: ViewController {
     // MARK: - Private Methods
     
     private func configureUI() {
-        navigationItem.searchController = searchController
         view.addSubviews(tableView)
         tableView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
+            $0.edges.equalToSuperview()
         }
     }
     
@@ -76,16 +73,31 @@ final class AnimalListViewController: ViewController {
 extension AnimalListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(AnimalPicturesViewController.build(animal: viewModel.animals[indexPath.row]), animated: true)
+        navigationController?.pushViewController(AnimalPicturesViewController.build(animal: viewModel.animals[indexPath.section].kinds[indexPath.row]), animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: AnimalListHeaderView.cellIdentifier) as? AnimalListHeaderView
+        header?.updateUI(title: viewModel.animals[section].name)
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.animals.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.animals.count
+        return viewModel.animals[section].kinds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cell: AnimalListItemCell.self)
-        cell.updateUI(animal: viewModel.animals[indexPath.row])
+        cell.updateUI(animal: viewModel.animals[indexPath.section].kinds[indexPath.row])
         
         return cell
     }

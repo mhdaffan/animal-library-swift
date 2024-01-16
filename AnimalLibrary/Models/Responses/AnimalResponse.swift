@@ -22,13 +22,13 @@ struct AnimalResponse: Codable {
 }
 
 struct AnimalTaxonomyResponse: Codable {
-    let kingdom: String
-    let phylum: String
+    let kingdom: String?
+    let phylum: String?
     let `class`: String?
     let order: String?
     let family: String?
     let genus: String?
-    let scientificName: String
+    let scientificName: String?
     
     enum CodingKeys: String, CodingKey {
         case kingdom, phylum, `class`, order, family, genus
@@ -38,7 +38,7 @@ struct AnimalTaxonomyResponse: Codable {
 
 struct AnimalCharacteristicsResponse: Codable {
     let habitat: String?
-    let lifespan: String
+    let lifespan: String?
     let weight: String?
     let height: String?
     let length: String?

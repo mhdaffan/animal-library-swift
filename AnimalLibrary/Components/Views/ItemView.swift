@@ -16,11 +16,13 @@ final class ItemView: UIStackView {
         $0.textColor = .black
         $0.font = .poppinsSemiBold(16)
         $0.numberOfLines = 0
+        $0.backgroundColor = .white
     }
     let descriptionLabel = UILabel().then {
         $0.textColor = .darkGray
         $0.font = .poppinsMedium(16)
         $0.numberOfLines = 0
+        $0.backgroundColor = .white
     }
     
     // MARK: Initialized
@@ -41,6 +43,7 @@ final class ItemView: UIStackView {
         spacing = 16
         alignment = .top
         distribution = .fill
+        backgroundColor = .white
         addArrangedSubviews(titleLabel, descriptionLabel)
     }
     

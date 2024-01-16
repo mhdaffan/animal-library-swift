@@ -59,6 +59,8 @@
 		36C300B92B56987F0003CBA1 /* PhotoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300B82B56987F0003CBA1 /* PhotoEndpoint.swift */; };
 		36C300BB2B5699090003CBA1 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300BA2B5699090003CBA1 /* PhotoRepository.swift */; };
 		36C300BD2B56999F0003CBA1 /* PhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300BC2B56999F0003CBA1 /* PhotoUseCase.swift */; };
+		36C300BF2B56A5410003CBA1 /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300BE2B56A5410003CBA1 /* AnimalListHeaderView.swift */; };
+		36C300C12B56A8720003CBA1 /* AnimalGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300C02B56A8720003CBA1 /* AnimalGroup.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,8 @@
 		36C300B82B56987F0003CBA1 /* PhotoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEndpoint.swift; sourceTree = "<group>"; };
 		36C300BA2B5699090003CBA1 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		36C300BC2B56999F0003CBA1 /* PhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUseCase.swift; sourceTree = "<group>"; };
+		36C300BE2B56A5410003CBA1 /* AnimalListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListHeaderView.swift; sourceTree = "<group>"; };
+		36C300C02B56A8720003CBA1 /* AnimalGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalGroup.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 			children = (
 				36C3007C2B5658670003CBA1 /* Responses */,
 				36C300A12B5673B20003CBA1 /* ScreenState.swift */,
+				36C300C02B56A8720003CBA1 /* AnimalGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				36C300902B566CA40003CBA1 /* AnimalListItemCell.swift */,
+				36C300BE2B56A5410003CBA1 /* AnimalListHeaderView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -682,9 +688,11 @@
 				36C300A52B567D1B0003CBA1 /* AnimalPicturesViewController.swift in Sources */,
 				36C3006B2B5648860003CBA1 /* Requestable.swift in Sources */,
 				36C300592B5646070003CBA1 /* ExtensionUIView.swift in Sources */,
+				36C300C12B56A8720003CBA1 /* AnimalGroup.swift in Sources */,
 				36C300612B5646630003CBA1 /* ExtensionUIStackView.swift in Sources */,
 				36C300AE2B5684120003CBA1 /* AppConstants.swift in Sources */,
 				36C300252B563FC00003CBA1 /* ViewController.swift in Sources */,
+				36C300BF2B56A5410003CBA1 /* AnimalListHeaderView.swift in Sources */,
 				36C300A72B567D320003CBA1 /* AnimalPicturesViewModel.swift in Sources */,
 				36C3002B2B563FC00003CBA1 /* AnimalLibrary.xcdatamodeld in Sources */,
 				36C300642B56475E0003CBA1 /* DI.swift in Sources */,
