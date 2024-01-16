@@ -25,6 +25,7 @@
 		36C3005D2B56463B0003CBA1 /* ExtensionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3005C2B56463B0003CBA1 /* ExtensionData.swift */; };
 		36C3005F2B5646480003CBA1 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3005E2B5646480003CBA1 /* ExtensionString.swift */; };
 		36C300612B5646630003CBA1 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300602B5646630003CBA1 /* ExtensionUIStackView.swift */; };
+		36C300642B56475E0003CBA1 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300632B56475E0003CBA1 /* DI.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		36C3005C2B56463B0003CBA1 /* ExtensionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionData.swift; sourceTree = "<group>"; };
 		36C3005E2B5646480003CBA1 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		36C300602B5646630003CBA1 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
+		36C300632B56475E0003CBA1 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		36C3001F2B563FC00003CBA1 /* AnimalLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				36C300622B5647570003CBA1 /* DI */,
 				36C300532B5645A50003CBA1 /* Components */,
 				36C300202B563FC00003CBA1 /* AppDelegate.swift */,
 				36C300222B563FC00003CBA1 /* SceneDelegate.swift */,
@@ -214,6 +217,14 @@
 				36C3005E2B5646480003CBA1 /* ExtensionString.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		36C300622B5647570003CBA1 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				36C300632B56475E0003CBA1 /* DI.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +452,7 @@
 				36C300612B5646630003CBA1 /* ExtensionUIStackView.swift in Sources */,
 				36C300252B563FC00003CBA1 /* ViewController.swift in Sources */,
 				36C3002B2B563FC00003CBA1 /* AnimalLibrary.xcdatamodeld in Sources */,
+				36C300642B56475E0003CBA1 /* DI.swift in Sources */,
 				36C300212B563FC00003CBA1 /* AppDelegate.swift in Sources */,
 				36C300562B5645BE0003CBA1 /* Then.swift in Sources */,
 				36C3005F2B5646480003CBA1 /* ExtensionString.swift in Sources */,
