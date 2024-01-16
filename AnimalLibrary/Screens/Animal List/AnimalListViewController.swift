@@ -45,7 +45,7 @@ final class AnimalListViewController: ViewController {
         viewModel.fetchAnimalList()
     }
     
-    // MARK: - Internal Methods
+    // MARK: - Private Methods
     
     private func configureUI() {
         navigationItem.searchController = searchController
@@ -57,6 +57,7 @@ final class AnimalListViewController: ViewController {
     
     private func addViewModelObservers() {
         viewModel.onStateChanged = { [weak self] state in
+            self?.view.loadingIndicator(isLoading: state.isLoading())
             switch state {
             case .failed(let error):
                 print(error.localizedDescription)

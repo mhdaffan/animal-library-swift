@@ -14,6 +14,7 @@ final class AnimalListViewModel: ViewModel {
     // MARK: - Network Calls
     
     func fetchAnimalList() {
+        self.onStateChanged?(.loading)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
             self?.animals = AnimalResponse.stub200()
             self?.onStateChanged?(.loaded)

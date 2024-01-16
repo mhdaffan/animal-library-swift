@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UIView {
     
@@ -13,6 +14,29 @@ extension UIView {
         for view in views {
             addSubview(view)
         }
+    }
+    
+    func showLoadingIndicator() {
+        guard viewWithTag(100001) == nil else {
+            return
+        }
+        
+        let indicator = UIActivityIndicatorView(style: .medium).then {
+            $0.startAnimating()
+            $0.tag = 100001
+        }
+        addSubview(indicator)
+        indicator.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+        }
+    }
+    
+    func hideLoadingIndicator() {
+        viewWithTag(100001)?.removeFromSuperview()
+    }
+    
+    func loadingIndicator(isLoading: Bool) {
+        isLoading ? showLoadingIndicator() : hideLoadingIndicator()
     }
     
 }
