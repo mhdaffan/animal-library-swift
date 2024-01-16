@@ -38,6 +38,11 @@
 		36C300802B5658BC0003CBA1 /* RepositoryInjectionkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3007F2B5658BC0003CBA1 /* RepositoryInjectionkey.swift */; };
 		36C300832B5669FF0003CBA1 /* AnimalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300822B5669FF0003CBA1 /* AnimalUseCase.swift */; };
 		36C300852B566A170003CBA1 /* UseCaseInjectionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300842B566A170003CBA1 /* UseCaseInjectionKey.swift */; };
+		36C300892B566A8C0003CBA1 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300882B566A8C0003CBA1 /* AnimalListViewController.swift */; };
+		36C3008B2B566A940003CBA1 /* AnimalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3008A2B566A940003CBA1 /* AnimalListViewModel.swift */; };
+		36C3008E2B566B750003CBA1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3008D2B566B750003CBA1 /* ViewModel.swift */; };
+		36C300912B566CA40003CBA1 /* AnimalListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300902B566CA40003CBA1 /* AnimalListItemCell.swift */; };
+		36C300932B566E0A0003CBA1 /* ReusableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300922B566E0A0003CBA1 /* ReusableViewCell.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +99,11 @@
 		36C3007F2B5658BC0003CBA1 /* RepositoryInjectionkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInjectionkey.swift; sourceTree = "<group>"; };
 		36C300822B5669FF0003CBA1 /* AnimalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalUseCase.swift; sourceTree = "<group>"; };
 		36C300842B566A170003CBA1 /* UseCaseInjectionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseInjectionKey.swift; sourceTree = "<group>"; };
+		36C300882B566A8C0003CBA1 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
+		36C3008A2B566A940003CBA1 /* AnimalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewModel.swift; sourceTree = "<group>"; };
+		36C3008D2B566B750003CBA1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		36C300902B566CA40003CBA1 /* AnimalListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListItemCell.swift; sourceTree = "<group>"; };
+		36C300922B566E0A0003CBA1 /* ReusableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewCell.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +193,8 @@
 		36C3001F2B563FC00003CBA1 /* AnimalLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				36C3008C2B566B6C0003CBA1 /* Base */,
+				36C300862B566A7A0003CBA1 /* Screens */,
 				36C300532B5645A50003CBA1 /* Components */,
 				36C300812B5669F20003CBA1 /* UseCases */,
 				36C300782B5655070003CBA1 /* Repositories */,
@@ -191,7 +203,6 @@
 				36C300622B5647570003CBA1 /* DI */,
 				36C300202B563FC00003CBA1 /* AppDelegate.swift */,
 				36C300222B563FC00003CBA1 /* SceneDelegate.swift */,
-				36C300242B563FC00003CBA1 /* ViewController.swift */,
 				36C300262B563FC00003CBA1 /* Main.storyboard */,
 				36C3002C2B563FC10003CBA1 /* Assets.xcassets */,
 				36C3002E2B563FC10003CBA1 /* LaunchScreen.storyboard */,
@@ -231,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				36C300552B5645BE0003CBA1 /* Then.swift */,
+				36C300922B566E0A0003CBA1 /* ReusableViewCell.swift */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -309,6 +321,41 @@
 				36C300822B5669FF0003CBA1 /* AnimalUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		36C300862B566A7A0003CBA1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				36C300872B566A800003CBA1 /* Animal List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		36C300872B566A800003CBA1 /* Animal List */ = {
+			isa = PBXGroup;
+			children = (
+				36C3008F2B566C8E0003CBA1 /* Subviews */,
+				36C300882B566A8C0003CBA1 /* AnimalListViewController.swift */,
+				36C3008A2B566A940003CBA1 /* AnimalListViewModel.swift */,
+			);
+			path = "Animal List";
+			sourceTree = "<group>";
+		};
+		36C3008C2B566B6C0003CBA1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				36C300242B563FC00003CBA1 /* ViewController.swift */,
+				36C3008D2B566B750003CBA1 /* ViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		36C3008F2B566C8E0003CBA1 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				36C300902B566CA40003CBA1 /* AnimalListItemCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,10 +585,13 @@
 				36C300252B563FC00003CBA1 /* ViewController.swift in Sources */,
 				36C3002B2B563FC00003CBA1 /* AnimalLibrary.xcdatamodeld in Sources */,
 				36C300642B56475E0003CBA1 /* DI.swift in Sources */,
+				36C3008E2B566B750003CBA1 /* ViewModel.swift in Sources */,
 				36C300212B563FC00003CBA1 /* AppDelegate.swift in Sources */,
 				36C300562B5645BE0003CBA1 /* Then.swift in Sources */,
 				36C300852B566A170003CBA1 /* UseCaseInjectionKey.swift in Sources */,
 				36C3006D2B564A1F0003CBA1 /* APIError.swift in Sources */,
+				36C300932B566E0A0003CBA1 /* ReusableViewCell.swift in Sources */,
+				36C300912B566CA40003CBA1 /* AnimalListItemCell.swift in Sources */,
 				36C3005F2B5646480003CBA1 /* ExtensionString.swift in Sources */,
 				36C3006F2B564A820003CBA1 /* NetworkInjectionKey.swift in Sources */,
 				36C3005D2B56463B0003CBA1 /* ExtensionData.swift in Sources */,
@@ -552,8 +602,10 @@
 				36C300692B56482B0003CBA1 /* NetworkService.swift in Sources */,
 				36C3007E2B5658700003CBA1 /* AnimalResponse.swift in Sources */,
 				36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */,
+				36C3008B2B566A940003CBA1 /* AnimalListViewModel.swift in Sources */,
 				36C300832B5669FF0003CBA1 /* AnimalUseCase.swift in Sources */,
 				36C3007A2B5655150003CBA1 /* AnimalRepository.swift in Sources */,
+				36C300892B566A8C0003CBA1 /* AnimalListViewController.swift in Sources */,
 				36C300712B564AEC0003CBA1 /* DataTransferService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
