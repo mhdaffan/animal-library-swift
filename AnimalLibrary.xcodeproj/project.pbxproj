@@ -28,10 +28,14 @@
 		36C300642B56475E0003CBA1 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300632B56475E0003CBA1 /* DI.swift */; };
 		36C300672B5647F50003CBA1 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300662B5647F50003CBA1 /* NetworkSession.swift */; };
 		36C300692B56482B0003CBA1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300682B56482B0003CBA1 /* NetworkService.swift */; };
-		36C3006B2B5648860003CBA1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3006A2B5648860003CBA1 /* Endpoint.swift */; };
+		36C3006B2B5648860003CBA1 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3006A2B5648860003CBA1 /* Requestable.swift */; };
 		36C3006D2B564A1F0003CBA1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3006C2B564A1F0003CBA1 /* APIError.swift */; };
 		36C3006F2B564A820003CBA1 /* NetworkInjectionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3006E2B564A820003CBA1 /* NetworkInjectionKey.swift */; };
 		36C300712B564AEC0003CBA1 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300702B564AEC0003CBA1 /* DataTransferService.swift */; };
+		36C300772B5654CE0003CBA1 /* AnimalEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300762B5654CE0003CBA1 /* AnimalEndpoint.swift */; };
+		36C3007A2B5655150003CBA1 /* AnimalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300792B5655150003CBA1 /* AnimalRepository.swift */; };
+		36C3007E2B5658700003CBA1 /* AnimalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3007D2B5658700003CBA1 /* AnimalResponse.swift */; };
+		36C300802B5658BC0003CBA1 /* RepositoryInjectionkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C3007F2B5658BC0003CBA1 /* RepositoryInjectionkey.swift */; };
 		ADDE3EAC829C10DD49247B72 /* Pods_AnimalLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB7964BB30C3E76EB5A06F7 /* Pods_AnimalLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,10 +82,14 @@
 		36C300632B56475E0003CBA1 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		36C300662B5647F50003CBA1 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		36C300682B56482B0003CBA1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		36C3006A2B5648860003CBA1 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		36C3006A2B5648860003CBA1 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		36C3006C2B564A1F0003CBA1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		36C3006E2B564A820003CBA1 /* NetworkInjectionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInjectionKey.swift; sourceTree = "<group>"; };
 		36C300702B564AEC0003CBA1 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		36C300762B5654CE0003CBA1 /* AnimalEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalEndpoint.swift; sourceTree = "<group>"; };
+		36C300792B5655150003CBA1 /* AnimalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRepository.swift; sourceTree = "<group>"; };
+		36C3007D2B5658700003CBA1 /* AnimalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResponse.swift; sourceTree = "<group>"; };
+		36C3007F2B5658BC0003CBA1 /* RepositoryInjectionkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInjectionkey.swift; sourceTree = "<group>"; };
 		5141B0B3CE954B632E3E3819 /* Pods-AnimalLibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58C00DF979185E0581505D16 /* Pods-AnimalLibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7281449004508D683ABB8997 /* Pods-AnimalLibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryUITests/Pods-AnimalLibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,9 +179,11 @@
 		36C3001F2B563FC00003CBA1 /* AnimalLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				36C300652B5647A30003CBA1 /* Network */,
-				36C300622B5647570003CBA1 /* DI */,
 				36C300532B5645A50003CBA1 /* Components */,
+				36C300782B5655070003CBA1 /* Repositories */,
+				36C300652B5647A30003CBA1 /* Network */,
+				36C3007B2B5658630003CBA1 /* Models */,
+				36C300622B5647570003CBA1 /* DI */,
 				36C300202B563FC00003CBA1 /* AppDelegate.swift */,
 				36C300222B563FC00003CBA1 /* SceneDelegate.swift */,
 				36C300242B563FC00003CBA1 /* ViewController.swift */,
@@ -237,6 +247,7 @@
 			children = (
 				36C300632B56475E0003CBA1 /* DI.swift */,
 				36C3006E2B564A820003CBA1 /* NetworkInjectionKey.swift */,
+				36C3007F2B5658BC0003CBA1 /* RepositoryInjectionkey.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -244,13 +255,46 @@
 		36C300652B5647A30003CBA1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				36C3006A2B5648860003CBA1 /* Endpoint.swift */,
+				36C300752B5654BB0003CBA1 /* Endpoints */,
+				36C3006A2B5648860003CBA1 /* Requestable.swift */,
 				36C3006C2B564A1F0003CBA1 /* APIError.swift */,
 				36C300662B5647F50003CBA1 /* NetworkSession.swift */,
 				36C300682B56482B0003CBA1 /* NetworkService.swift */,
 				36C300702B564AEC0003CBA1 /* DataTransferService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		36C300752B5654BB0003CBA1 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				36C300762B5654CE0003CBA1 /* AnimalEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		36C300782B5655070003CBA1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				36C300792B5655150003CBA1 /* AnimalRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		36C3007B2B5658630003CBA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36C3007C2B5658670003CBA1 /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36C3007C2B5658670003CBA1 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				36C3007D2B5658700003CBA1 /* AnimalResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,7 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C3006B2B5648860003CBA1 /* Endpoint.swift in Sources */,
+				36C3006B2B5648860003CBA1 /* Requestable.swift in Sources */,
 				36C300592B5646070003CBA1 /* ExtensionUIView.swift in Sources */,
 				36C300612B5646630003CBA1 /* ExtensionUIStackView.swift in Sources */,
 				36C300252B563FC00003CBA1 /* ViewController.swift in Sources */,
@@ -486,10 +530,14 @@
 				36C3005F2B5646480003CBA1 /* ExtensionString.swift in Sources */,
 				36C3006F2B564A820003CBA1 /* NetworkInjectionKey.swift in Sources */,
 				36C3005D2B56463B0003CBA1 /* ExtensionData.swift in Sources */,
+				36C300802B5658BC0003CBA1 /* RepositoryInjectionkey.swift in Sources */,
+				36C300772B5654CE0003CBA1 /* AnimalEndpoint.swift in Sources */,
 				36C300672B5647F50003CBA1 /* NetworkSession.swift in Sources */,
 				36C3005B2B56462C0003CBA1 /* ExtensionUIImageView+ImageLoader.swift in Sources */,
 				36C300692B56482B0003CBA1 /* NetworkService.swift in Sources */,
+				36C3007E2B5658700003CBA1 /* AnimalResponse.swift in Sources */,
 				36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */,
+				36C3007A2B5655150003CBA1 /* AnimalRepository.swift in Sources */,
 				36C300712B564AEC0003CBA1 /* DataTransferService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
