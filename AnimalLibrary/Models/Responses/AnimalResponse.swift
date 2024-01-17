@@ -5,7 +5,7 @@
 //  Created by Muhammad Affan on 16/01/24.
 //
 
-struct AnimalResponse: Codable {
+struct AnimalResponse: Codable, Equatable {
     let name: String
     let taxonomy: AnimalTaxonomyResponse?
     let locations: [String]
@@ -21,7 +21,7 @@ struct AnimalResponse: Codable {
     }
 }
 
-struct AnimalTaxonomyResponse: Codable {
+struct AnimalTaxonomyResponse: Codable, Equatable {
     let kingdom: String?
     let phylum: String?
     let `class`: String?
@@ -36,7 +36,7 @@ struct AnimalTaxonomyResponse: Codable {
     }
 }
 
-struct AnimalCharacteristicsResponse: Codable {
+struct AnimalCharacteristicsResponse: Codable, Equatable {
     let habitat: String?
     let lifespan: String?
     let weight: String?

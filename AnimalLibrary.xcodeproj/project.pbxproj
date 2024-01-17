@@ -15,6 +15,7 @@
 		367F94122B579F1B00BAF633 /* NetworkSessionMockImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94112B579F1B00BAF633 /* NetworkSessionMockImpl.swift */; };
 		367F94142B579F7800BAF633 /* NetworkServiceImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94132B579F7800BAF633 /* NetworkServiceImplTest.swift */; };
 		367F94162B57A04B00BAF633 /* ExtensionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94152B57A04B00BAF633 /* ExtensionResult.swift */; };
+		367F94182B57A16E00BAF633 /* DataTransferServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94172B57A16E00BAF633 /* DataTransferServiceTest.swift */; };
 		36C300212B563FC00003CBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300202B563FC00003CBA1 /* AppDelegate.swift */; };
 		36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300222B563FC00003CBA1 /* SceneDelegate.swift */; };
 		36C300252B563FC00003CBA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300242B563FC00003CBA1 /* ViewController.swift */; };
@@ -96,6 +97,7 @@
 		367F94112B579F1B00BAF633 /* NetworkSessionMockImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMockImpl.swift; sourceTree = "<group>"; };
 		367F94132B579F7800BAF633 /* NetworkServiceImplTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplTest.swift; sourceTree = "<group>"; };
 		367F94152B57A04B00BAF633 /* ExtensionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionResult.swift; sourceTree = "<group>"; };
+		367F94172B57A16E00BAF633 /* DataTransferServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTest.swift; sourceTree = "<group>"; };
 		36C3001D2B563FC00003CBA1 /* AnimalLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C300202B563FC00003CBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C300222B563FC00003CBA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				367F94102B579F0F00BAF633 /* Mocks */,
 				367F94132B579F7800BAF633 /* NetworkServiceImplTest.swift */,
+				367F94172B57A16E00BAF633 /* DataTransferServiceTest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				367F940E2B579EF100BAF633 /* ExtensionXCTestCase.swift in Sources */,
+				367F94182B57A16E00BAF633 /* DataTransferServiceTest.swift in Sources */,
 				367F94092B579EA400BAF633 /* AnimalResponseMock.swift in Sources */,
 				367F940B2B579EC700BAF633 /* PhotoListResponseMock.swift in Sources */,
 				36C3003B2B563FC10003CBA1 /* AnimalLibraryTests.swift in Sources */,
