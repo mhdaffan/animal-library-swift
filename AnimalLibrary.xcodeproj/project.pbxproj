@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1E8845EC2BD5FCA41F8203C1 /* Pods_AnimalLibraryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C32F72C25768A3E2FDE10D /* Pods_AnimalLibraryUITests.framework */; };
 		1FD4CA1D97B155B516B8D452 /* Pods_AnimalLibraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8B73392F42DABD60AFCAC7 /* Pods_AnimalLibraryTests.framework */; };
+		367F94092B579EA400BAF633 /* AnimalResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94082B579EA400BAF633 /* AnimalResponseMock.swift */; };
+		367F940B2B579EC700BAF633 /* PhotoListResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F940A2B579EC700BAF633 /* PhotoListResponseMock.swift */; };
+		367F940E2B579EF100BAF633 /* ExtensionXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F940D2B579EF100BAF633 /* ExtensionXCTestCase.swift */; };
+		367F94122B579F1B00BAF633 /* NetworkSessionMockImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94112B579F1B00BAF633 /* NetworkSessionMockImpl.swift */; };
 		36C300212B563FC00003CBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300202B563FC00003CBA1 /* AppDelegate.swift */; };
 		36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300222B563FC00003CBA1 /* SceneDelegate.swift */; };
 		36C300252B563FC00003CBA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300242B563FC00003CBA1 /* ViewController.swift */; };
@@ -84,6 +88,10 @@
 /* Begin PBXFileReference section */
 		2E68A8EAA45AB6C0D3D3ECAC /* Pods-AnimalLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibrary.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibrary/Pods-AnimalLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		31D11E31A9ACA2E874F3CEC6 /* Pods-AnimalLibraryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalLibraryTests.release.xcconfig"; path = "Target Support Files/Pods-AnimalLibraryTests/Pods-AnimalLibraryTests.release.xcconfig"; sourceTree = "<group>"; };
+		367F94082B579EA400BAF633 /* AnimalResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResponseMock.swift; sourceTree = "<group>"; };
+		367F940A2B579EC700BAF633 /* PhotoListResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListResponseMock.swift; sourceTree = "<group>"; };
+		367F940D2B579EF100BAF633 /* ExtensionXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionXCTestCase.swift; sourceTree = "<group>"; };
+		367F94112B579F1B00BAF633 /* NetworkSessionMockImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMockImpl.swift; sourceTree = "<group>"; };
 		36C3001D2B563FC00003CBA1 /* AnimalLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C300202B563FC00003CBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C300222B563FC00003CBA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +212,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		367F94072B579E6800BAF633 /* Mock Models */ = {
+			isa = PBXGroup;
+			children = (
+				367F94082B579EA400BAF633 /* AnimalResponseMock.swift */,
+				367F940A2B579EC700BAF633 /* PhotoListResponseMock.swift */,
+			);
+			path = "Mock Models";
+			sourceTree = "<group>";
+		};
+		367F940C2B579EE400BAF633 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				367F940D2B579EF100BAF633 /* ExtensionXCTestCase.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		367F940F2B579F0A00BAF633 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				367F94102B579F0F00BAF633 /* Mocks */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		367F94102B579F0F00BAF633 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				367F94112B579F1B00BAF633 /* NetworkSessionMockImpl.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		36C300142B563FC00003CBA1 = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +291,9 @@
 		36C300392B563FC10003CBA1 /* AnimalLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
+				367F940F2B579F0A00BAF633 /* Network */,
+				367F940C2B579EE400BAF633 /* Extensions */,
+				367F94072B579E6800BAF633 /* Mock Models */,
 				36C3003A2B563FC10003CBA1 /* AnimalLibraryTests.swift */,
 			);
 			path = AnimalLibraryTests;
@@ -734,7 +778,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				367F940E2B579EF100BAF633 /* ExtensionXCTestCase.swift in Sources */,
+				367F94092B579EA400BAF633 /* AnimalResponseMock.swift in Sources */,
+				367F940B2B579EC700BAF633 /* PhotoListResponseMock.swift in Sources */,
 				36C3003B2B563FC10003CBA1 /* AnimalLibraryTests.swift in Sources */,
+				367F94122B579F1B00BAF633 /* NetworkSessionMockImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
