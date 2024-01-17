@@ -5,6 +5,7 @@
 //  Created by Muhammad Affan on 17/01/24.
 //
 
+@testable import AnimalLibrary
 import Foundation
 
 extension PhotoListResponse {
