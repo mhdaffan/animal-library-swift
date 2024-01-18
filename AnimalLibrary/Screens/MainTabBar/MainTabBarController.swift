@@ -9,10 +9,15 @@ import UIKit
 
 final class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    let animalListVC = UINavigationController(rootViewController: AnimalListViewController.build()).then {
+    let animalListVC = AnimalListViewController.build().then {
         $0.title = "Animals"
-        $0.tabBarItem.image = .icPawprint?.withRenderingMode(.alwaysOriginal)
-        $0.tabBarItem.selectedImage = .icPawprintFill?.withRenderingMode(.alwaysOriginal)
+        $0.tabBarItem.image = .icPawprint?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        $0.tabBarItem.selectedImage = .icPawprintFill?.withTintColor(.red, renderingMode: .alwaysOriginal)
+    }
+    let favoritesVC = FavoritesAnimalViewController.build().then {
+        $0.title = "Favorites"
+        $0.tabBarItem.image = .icHeart?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+        $0.tabBarItem.selectedImage = .icHeartFill?.withTintColor(.red, renderingMode: .alwaysOriginal)
     }
     
     private var animationBounce: CAKeyframeAnimation = .bounceAnimation()
@@ -34,7 +39,8 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
     
     func configureViewControllers() {
         viewControllers = [
-            animalListVC
+            UINavigationController(rootViewController: animalListVC),
+            UINavigationController(rootViewController: favoritesVC)
         ]
     }
     
@@ -48,6 +54,7 @@ final class MainTabBarController: UITabBarController, UITabBarControllerDelegate
         UITabBarItem.appearance().setTitleTextAttributes(fontAttribute, for: .normal)
         
         tabBar.tintColor = .red
+        tabBar.unselectedItemTintColor = .darkGray
     }
     
 }
