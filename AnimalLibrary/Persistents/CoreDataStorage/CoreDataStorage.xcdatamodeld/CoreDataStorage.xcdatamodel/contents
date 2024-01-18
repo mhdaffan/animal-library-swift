@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="22G313" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AnimalEntity" representedClassName="AnimalEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="animalPhotos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AnimalPhotoEntity" inverseName="animal" inverseEntity="AnimalPhotoEntity"/>
+    </entity>
+    <entity name="AnimalPhotoEntity" representedClassName="AnimalPhotoEntity" syncable="YES">
+        <attribute name="alt" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="photographer" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="animal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalEntity" inverseName="animalPhotos" inverseEntity="AnimalEntity"/>
+    </entity>
+</model>
