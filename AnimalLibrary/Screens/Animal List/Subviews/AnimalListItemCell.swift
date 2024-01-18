@@ -13,19 +13,19 @@ final class AnimalListItemCell: UITableViewCell {
     // MARK: - UI Properties
     
     let nameLabel = UILabel().then {
-        $0.textColor = .black
-        $0.font = .poppinsSemiBold(14)
+        $0.textColor = .darkGray
+        $0.font = .poppinsMedium(14)
         $0.numberOfLines = 0
         $0.backgroundColor = .white
     }
     let locationLabel = UILabel().then {
-        $0.textColor = .darkGray
-        $0.font = .poppinsMedium(12)
+        $0.textColor = .gray
+        $0.font = .poppinsRegular(12)
         $0.numberOfLines = 0
         $0.backgroundColor = .white
     }
     let lineView = UIView().then {
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .lightGray
     }
     
     // MARK: - Initialized

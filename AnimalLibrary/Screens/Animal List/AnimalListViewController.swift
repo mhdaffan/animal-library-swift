@@ -13,6 +13,7 @@ final class AnimalListViewController: ViewController {
     // MARK: - UI Properties
     
     private(set) lazy var tableView = UITableView().then {
+        $0.sectionHeaderTopPadding = 0
         $0.backgroundColor = .white
         $0.separatorStyle = .none
         $0.register(cell: AnimalListItemCell.self)
@@ -66,6 +67,19 @@ final class AnimalListViewController: ViewController {
         }
     }
     
+    private func updateSectionData(section: Int, rows: Int, selected: Bool) {
+        var indexPaths = [IndexPath]()
+        for row in 0..<rows {
+            indexPaths.append(IndexPath(row: row, section: section))
+        }
+        
+        if selected {
+            tableView.insertRows(at: indexPaths, with: .fade)
+        } else {
+            tableView.deleteRows(at: indexPaths, with: .fade)
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -78,7 +92,12 @@ extension AnimalListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: AnimalListHeaderView.cellIdentifier) as? AnimalListHeaderView
-        header?.updateUI(title: viewModel.animals[section].name)
+        let animalGroup = viewModel.animals[section]
+        header?.updateUI(title: animalGroup.name, selected: animalGroup.isSelected)
+        header?.onSelected = { [weak self] selected in
+            self?.viewModel.animals[section].isSelected = selected
+            self?.updateSectionData(section: section, rows: animalGroup.kinds.count, selected: selected)
+        }
         
         return header
     }
@@ -92,7 +111,10 @@ extension AnimalListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.animals[section].kinds.count
+        if viewModel.animals[section].isSelected {
+            return viewModel.animals[section].kinds.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

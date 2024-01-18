@@ -7,5 +7,6 @@
 
 struct AnimalGroup {
     let name: String
+    var isSelected: Bool = true
     var kinds: [AnimalResponse]
 }
