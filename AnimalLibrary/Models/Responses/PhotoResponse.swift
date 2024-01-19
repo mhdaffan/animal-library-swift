@@ -17,6 +17,24 @@ struct PhotoResponse: Codable {
 }
 
 struct PhotoSourceResponse: Codable {
-    let portrait: String
     let landscape: String
+}
+
+extension PhotoListResponse {
+    
+    func toAnimalPhotoList() -> AnimalPhotoList {
+        return AnimalPhotoList(photos: photos.map { $0.toAnimalPhotoModel() })
+    }
+}
+
+extension PhotoResponse {
+    
+    func toAnimalPhotoModel() -> AnimalPhoto {
+        return AnimalPhoto(
+            id: self.id,
+            photographer: self.photographer,
+            alt: self.alt,
+            url: self.src.landscape,
+            isFavorited: false)
+    }
 }

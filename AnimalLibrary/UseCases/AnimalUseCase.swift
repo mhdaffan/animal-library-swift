@@ -25,7 +25,7 @@ struct AnimalUseCaseImpl: AnimalUseCase {
                 switch result {
                 case .success(let response):
                     if !response.isEmpty {
-                        animalGroup.append(.init(name: animal, kinds: response))
+                        animalGroup.append(.init(name: animal, kinds: response.map { $0.toAnimalModel(type: animal) }))
                     }
                 case .failure:
                     break
@@ -35,7 +35,7 @@ struct AnimalUseCaseImpl: AnimalUseCase {
         }
         
         group.notify(queue: .main) {
-            completion(.success(animalGroup))
+            completion(.success(animalGroup.sorted(by: { $0.name < $1.name})))
         }
     }
     

@@ -47,9 +47,9 @@ final class AnimalPicturesViewController: ViewController {
     
     private func configureUI() {
         title = viewModel.animal.name
-        view.addSubviews(tableView)
+        view.addSubview(tableView)
         tableView.snp.makeConstraints {
-            $0.edges.equalTo(view.safeAreaLayoutGuide)
+            $0.edges.equalToSuperview()
         }
     }
     
@@ -93,9 +93,16 @@ extension AnimalPicturesViewController: UITableViewDataSource, UITableViewDelega
             return UITableViewCell()
         }
         
+        let animalPhoto = photos[indexPath.row]
         let cell = tableView.dequeueReusableCell(for: indexPath, cell: AnimalPicturesItemCell.self)
-        cell.updateUI(photo: photos[indexPath.row])
-        
+        cell.updateUI(photo: animalPhoto)
+        cell.onTapFavorite = { [weak self] selected in
+            if selected {
+                self?.viewModel.saveAnimalPhotoToLocal(animalPhoto: animalPhoto)
+            } else {
+                self?.viewModel.removeAnimalPhotoFromLocal(animalPhoto: animalPhoto)
+            }
+        }
         return cell
     }
     
@@ -109,7 +116,7 @@ extension AnimalPicturesViewController: UITableViewDataSource, UITableViewDelega
 
 extension AnimalPicturesViewController {
     
-    static func build(animal: AnimalResponse) -> AnimalPicturesViewController {
+    static func build(animal: AnimalModel) -> AnimalPicturesViewController {
         let viewModel = AnimalPicturesViewModel(animal: animal)
         return AnimalPicturesViewController(viewModel: viewModel)
     }

@@ -10,4 +10,5 @@ struct AnimalPhoto {
     let photographer: String
     let alt: String
     let url: String
+    var isFavorited: Bool
 }

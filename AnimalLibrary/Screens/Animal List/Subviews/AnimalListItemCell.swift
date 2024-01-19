@@ -62,7 +62,7 @@ final class AnimalListItemCell: UITableViewCell {
     
     // MARK: - Internal Methods
     
-    func updateUI(animal: AnimalResponse) {
+    func updateUI(animal: AnimalModel) {
         nameLabel.text = animal.name
         locationLabel.text = animal.locations.joined(separator: ", ")
     }
