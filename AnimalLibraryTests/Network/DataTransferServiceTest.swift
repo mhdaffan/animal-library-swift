@@ -11,7 +11,7 @@ import XCTest
 final class DataTransferServiceTest: XCTestCase {
     
     var session = NetworkSessionMockImpl()
-    var mockRegisterEndpoint = AnimalEndpoint.search(name: "Lion")
+    var mockEndpoint = AnimalEndpoint.search(name: "Lion")
     
     override func setUp() {
         super.setUp()
@@ -22,7 +22,7 @@ final class DataTransferServiceTest: XCTestCase {
         session.data = AnimalResponse.mock200()
         let sut = makeSUT()
         
-        sut.request(with: mockRegisterEndpoint, decodable: [AnimalResponse].self, completion: { result in
+        sut.request(with: mockEndpoint, decodable: [AnimalResponse].self, completion: { result in
             let data = try! result.get()
             XCTAssertEqual(data, AnimalResponse.stub200())
         })
@@ -32,7 +32,7 @@ final class DataTransferServiceTest: XCTestCase {
         session.data = nil
         let sut = makeSUT()
         
-        sut.request(with: mockRegisterEndpoint, decodable: [AnimalResponse].self, completion: { result in
+        sut.request(with: mockEndpoint, decodable: [AnimalResponse].self, completion: { result in
             let error = result.getError()
             XCTAssertNotNil(error)
             XCTAssertEqual(error?.localizedDescription, APIError.noData.localizedDescription)
@@ -43,7 +43,7 @@ final class DataTransferServiceTest: XCTestCase {
         session.data = Data("Internal Server Error".utf8)
         let sut = makeSUT()
         
-        sut.request(with: mockRegisterEndpoint, decodable: [AnimalResponse].self, completion: { result in
+        sut.request(with: mockEndpoint, decodable: [AnimalResponse].self, completion: { result in
             let error = result.getError()
             XCTAssertNotNil(error)
             XCTAssertEqual(error?.localizedDescription, APIError.parseError.localizedDescription)
@@ -54,7 +54,7 @@ final class DataTransferServiceTest: XCTestCase {
         session.error = APIError.noConnection
         let sut = makeSUT()
         
-        sut.request(with: mockRegisterEndpoint, decodable: [AnimalResponse].self, completion: { result in
+        sut.request(with: mockEndpoint, decodable: [AnimalResponse].self, completion: { result in
             let error = result.getError()
             XCTAssertNotNil(error)
             XCTAssertEqual(error?.localizedDescription, APIError.noConnection.localizedDescription)
