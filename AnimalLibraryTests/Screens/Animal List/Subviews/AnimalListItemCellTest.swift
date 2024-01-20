@@ -20,20 +20,7 @@ final class AnimalListItemCellTest: XCTestCase {
     }
     
     func test_updateUI() {
-        let stubbedAnimal = AnimalModel(
-            name: "Cape Lion",
-            type: "Lion",
-            locations: [
-                "Africa",
-                "Asia"
-            ],
-            photos: [],
-            characteristics: AnimalCharacteristicsModel(
-                habitat: "open woodland, scrub, grassland",
-                lifespan: "8 - 15 years",
-                weight: "120kg - 249kg (264lbs - 550lbs)",
-                height: nil,
-                length: "1.4m - 2.5m (4.7ft - 8.2ft)"))
+        let stubbedAnimal = AnimalModel.stub()
         let sut = makeSUT()
         
         sut.updateUI(animal: stubbedAnimal)

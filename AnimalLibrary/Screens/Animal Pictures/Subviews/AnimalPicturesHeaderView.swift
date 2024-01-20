@@ -50,14 +50,15 @@ final class AnimalPicturesHeaderView: UITableViewHeaderFooterView {
     // MARK: - Internal Methods
     
     func updateUI(animal: AnimalModel) {
+        let lifespan = animal.characteristics.lifespan ?? ""
         let titleWidth: CGFloat = 100
         nameView.updateUI(title: "Name", description: animal.name, titleWidth: titleWidth)
         locationsView.updateUI(title: "Locations", description: animal.locations.joined(separator: ", "), titleWidth: titleWidth)
-        if let lifespan = animal.characteristics.lifespan {
-            lifespanView.updateUI(title: "Lifespan", description: lifespan, titleWidth: titleWidth)
-        }
-        
+        lifespanView.updateUI(title: "Lifespan", description: lifespan, titleWidth: titleWidth)
         sizeView.updateUI(title: "Size", description: animal.size, titleWidth: titleWidth)
+        
+        lifespanView.isHidden = lifespan.isEmpty
+        sizeView.isHidden = animal.size.isEmpty
     }
     
 }
