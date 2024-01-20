@@ -44,7 +44,7 @@ final class AnimalListHeaderViewTest: XCTestCase {
     }
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> AnimalListHeaderView {
-        var sut = AnimalListHeaderView()
+        let sut = AnimalListHeaderView()
         trackForMemoryLeaks(sut)
         
         return sut

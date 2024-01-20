@@ -43,7 +43,7 @@ final class AnimalListItemCellTest: XCTestCase {
     }
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> AnimalListItemCell {
-        var sut = AnimalListItemCell()
+        let sut = AnimalListItemCell()
         trackForMemoryLeaks(sut)
         
         return sut

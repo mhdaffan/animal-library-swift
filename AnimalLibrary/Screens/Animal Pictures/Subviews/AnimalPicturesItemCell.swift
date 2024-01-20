@@ -8,18 +8,6 @@
 import UIKit
 import SnapKit
 
-extension UIButton.Configuration {
-    
-    static func mediumImaged(imagePlacement: NSDirectionalRectEdge) -> UIButton.Configuration {
-        var configuration = UIButton.Configuration.plain()
-        configuration.imagePlacement = imagePlacement
-        configuration.buttonSize = .medium
-        configuration.imagePadding = 8
-        return configuration
-    }
-    
-}
-
 final class AnimalPicturesItemCell: UITableViewCell {
     
     // MARK: - Closures
@@ -45,8 +33,8 @@ final class AnimalPicturesItemCell: UITableViewCell {
         $0.clipsToBounds = true
     }
     let favoriteButton = UIButton(configuration: .mediumImaged(imagePlacement: .leading)).then {
-        $0.setImage(.icHeartFill?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .selected)
-        $0.setImage(.icHeart?.withTintColor(.darkGray, renderingMode: .alwaysOriginal), for: .normal)
+        $0.setImage(.icHeartFill?.color(.darkGray), for: .selected)
+        $0.setImage(.icHeart?.color(.darkGray), for: .normal)
         $0.setTitle("Add to favorite", for: .normal)
         $0.setTitle("Remove from favorite", for: .selected)
         $0.setTitleColor(.darkGray, for: .normal)
@@ -117,8 +105,8 @@ final class AnimalPicturesItemCell: UITableViewCell {
         photographerLabel.text = "by " + photo.photographer
         altLabel.text = photo.alt.isEmpty ? "-" : photo.alt
         photoImageView.load(photo.url, placeholder: .icEmpty, contentMode: .scaleAspectFit)
-        updateFavoriteButtonBorderColor()
         favoriteButton.isSelected = photo.isFavorited
+        updateFavoriteButtonBorderColor()
     }
     
 }
