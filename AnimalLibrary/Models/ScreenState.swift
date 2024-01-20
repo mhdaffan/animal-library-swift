@@ -23,4 +23,12 @@ extension ScreenState {
         }
     }
     
+    func isLoaded() -> Bool {
+        switch self {
+        case .loaded:
+            return true
+        default:
+            return false
+        }
+    }
 }
