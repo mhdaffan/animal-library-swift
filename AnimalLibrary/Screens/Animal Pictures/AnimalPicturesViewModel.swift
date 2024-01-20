@@ -5,7 +5,7 @@
 //  Created by Muhammad Affan on 16/01/24.
 //
 
-struct AnimalPhotoList {
+struct AnimalPhotoList: Equatable {
     var photos: [AnimalPhoto]
 }
 

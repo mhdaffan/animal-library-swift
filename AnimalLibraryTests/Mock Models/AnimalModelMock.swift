@@ -26,4 +26,10 @@ extension AnimalModel {
                 length: "1.4m - 2.5m (4.7ft - 8.2ft)"))
     }
     
+    static func stubArray() -> [AnimalModel] {
+        return [
+            AnimalModel.stub(photos: [AnimalPhoto.stub(favorited: true)])
+        ]
+    }
+    
 }

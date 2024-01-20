@@ -38,6 +38,9 @@
 		3695496E2B5C223500FC3155 /* AnimalPhotoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695496D2B5C223500FC3155 /* AnimalPhotoMock.swift */; };
 		369549702B5C25DC00FC3155 /* AnimalPicturesHeaderViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695496F2B5C25DC00FC3155 /* AnimalPicturesHeaderViewTest.swift */; };
 		369549722B5C26C600FC3155 /* AnimalModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369549712B5C26C600FC3155 /* AnimalModelMock.swift */; };
+		369549742B5C2B8400FC3155 /* AnimalEntityStorageMockImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369549732B5C2B8400FC3155 /* AnimalEntityStorageMockImpl.swift */; };
+		369549762B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369549752B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift */; };
+		369549782B5C2BC100FC3155 /* PhotoRepositoryMockImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369549772B5C2BC100FC3155 /* PhotoRepositoryMockImpl.swift */; };
 		36C300212B563FC00003CBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300202B563FC00003CBA1 /* AppDelegate.swift */; };
 		36C300232B563FC00003CBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300222B563FC00003CBA1 /* SceneDelegate.swift */; };
 		36C300252B563FC00003CBA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C300242B563FC00003CBA1 /* ViewController.swift */; };
@@ -147,6 +150,9 @@
 		3695496D2B5C223500FC3155 /* AnimalPhotoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPhotoMock.swift; sourceTree = "<group>"; };
 		3695496F2B5C25DC00FC3155 /* AnimalPicturesHeaderViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPicturesHeaderViewTest.swift; sourceTree = "<group>"; };
 		369549712B5C26C600FC3155 /* AnimalModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModelMock.swift; sourceTree = "<group>"; };
+		369549732B5C2B8400FC3155 /* AnimalEntityStorageMockImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalEntityStorageMockImpl.swift; sourceTree = "<group>"; };
+		369549752B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUseCaseImplTest.swift; sourceTree = "<group>"; };
+		369549772B5C2BC100FC3155 /* PhotoRepositoryMockImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryMockImpl.swift; sourceTree = "<group>"; };
 		36C3001D2B563FC00003CBA1 /* AnimalLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C300202B563FC00003CBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C300222B563FC00003CBA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				363F94AD2B5A8CFA00DCA79D /* AnimalUseCaseImplTest.swift */,
+				369549752B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -292,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				363F94B12B5A8D4300DCA79D /* AnimalRespositoryMockImpl.swift */,
+				369549732B5C2B8400FC3155 /* AnimalEntityStorageMockImpl.swift */,
+				369549772B5C2BC100FC3155 /* PhotoRepositoryMockImpl.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1020,6 +1029,7 @@
 				3695496E2B5C223500FC3155 /* AnimalPhotoMock.swift in Sources */,
 				363F94B22B5A8D4300DCA79D /* AnimalRespositoryMockImpl.swift in Sources */,
 				363F94B62B5A943F00DCA79D /* AnimalListViewModelTest.swift in Sources */,
+				369549742B5C2B8400FC3155 /* AnimalEntityStorageMockImpl.swift in Sources */,
 				369549622B5BF65C00FC3155 /* AnimalListItemCellTest.swift in Sources */,
 				367F94182B57A16E00BAF633 /* DataTransferServiceTest.swift in Sources */,
 				367F94092B579EA400BAF633 /* AnimalResponseMock.swift in Sources */,
@@ -1027,7 +1037,9 @@
 				367F940B2B579EC700BAF633 /* PhotoListResponseMock.swift in Sources */,
 				369549702B5C25DC00FC3155 /* AnimalPicturesHeaderViewTest.swift in Sources */,
 				36C3003B2B563FC10003CBA1 /* AnimalLibraryTests.swift in Sources */,
+				369549782B5C2BC100FC3155 /* PhotoRepositoryMockImpl.swift in Sources */,
 				363F94B82B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift in Sources */,
+				369549762B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift in Sources */,
 				367F94142B579F7800BAF633 /* NetworkServiceImplTest.swift in Sources */,
 				369549682B5C1E9000FC3155 /* AnimalPicturesItemCellTest.swift in Sources */,
 				367F94122B579F1B00BAF633 /* NetworkSessionMockImpl.swift in Sources */,
