@@ -13,17 +13,30 @@ final class AnimalPicturesViewModelTest: XCTestCase {
     private var mockRepo = PhotoRepositoryMockImpl()
     private var mockAnimalStorage = AnimalEntityStorageMockImpl()
     
-    func test_fetchAnimalList_withSuccessResponse_expectAnimalsUpdated() {
+    func test_fetchPhotos_withSuccessResponse_expectAnimalsUpdated() {
         let stubbedResponse = PhotoListResponse.stub200()
         assertFetchPhotosResponse(
             stubbedResult: .success(stubbedResponse),
             expResponse: stubbedResponse.toAnimalPhotoList())
     }
     
-    func test_fetchAnimalList_withErrorResponse_expectAnimalsEmpty() {
+    func test_fetchPhotos_withErrorResponse_expectAnimalsEmpty() {
         assertFetchPhotosResponse(
             stubbedResult: .failure(APIError.noData),
             expResponse: nil)
+    }
+    
+    func test_fetchNextPagePhotos_withSuccessResponse_expectAnimalsUpdated() {
+        let stubbedResponse = PhotoListResponse.stubNextPage200()
+        assertFetchNextPagePhotosResponse(
+            stubbedResult: .success(stubbedResponse),
+            expResponseCount: stubbedResponse.photos.count)
+    }
+    
+    func test_fetchNextPagePhotos_withErrorResponse_expectAnimalsEmpty() {
+        assertFetchNextPagePhotosResponse(
+            stubbedResult: .failure(APIError.noData),
+            expResponseCount: 0)
     }
     
     func test_saveAnimalPhotoToLocal() {
@@ -74,6 +87,30 @@ final class AnimalPicturesViewModelTest: XCTestCase {
         
         waitForExpectations(timeout: 0.5) { _ in
             XCTAssertEqual(sut.photo, expResponse)
+        }
+    }
+    
+    func assertFetchNextPagePhotosResponse(
+        stubbedResult: Result<PhotoListResponse, Error>,
+        expResponseCount: Int,
+        file: StaticString = #file,
+        line: UInt = #line)
+    {
+        let sut = makeSUT()
+        sut.photo = PhotoListResponse.stub200().toAnimalPhotoList()
+        mockRepo.nextPageSearchResult = stubbedResult
+        let exp = expectation(description: "waiting for response")
+        
+        sut.onStateChanged = { state in
+            if state.isLoaded() || state.isFailed() {
+                exp.fulfill()
+            }
+        }
+        
+        sut.fetchNextPagePhotos(nextPageUrl: "https://api.pexels.com/v1/search/?page=1&per_page=15&query=Cape+Lion")
+        
+        waitForExpectations(timeout: 0.5) { _ in
+            XCTAssertEqual(sut.photo?.photos.count, PhotoListResponse.stub200().toAnimalPhotoList().photos.count + expResponseCount)
         }
     }
     

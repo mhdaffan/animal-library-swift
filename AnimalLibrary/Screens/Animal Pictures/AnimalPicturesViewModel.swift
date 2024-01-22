@@ -5,7 +5,6 @@
 //  Created by Muhammad Affan on 16/01/24.
 //
 
-import Foundation
 final class AnimalPicturesViewModel: ViewModel {
     
     var animal: AnimalModel
@@ -28,10 +27,7 @@ final class AnimalPicturesViewModel: ViewModel {
             switch result {
             case .success(let response):
                 self?.photo = response
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self?.state = .loaded
-                })
-                
+                self?.state = .loaded
             case .failure(let error):
                 self?.state = .failed(error)
             }
@@ -45,9 +41,7 @@ final class AnimalPicturesViewModel: ViewModel {
             case .success(let response):
                 self?.photo?.photos.append(contentsOf: response.photos)
                 self?.photo?.nextPage = response.nextPage
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self?.state = .loaded
-                })
+                self?.state = .loaded
             case .failure(let error):
                 self?.state = .failed(error)
             }
