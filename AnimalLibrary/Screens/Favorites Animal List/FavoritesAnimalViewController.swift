@@ -12,6 +12,7 @@ final class FavoritesAnimalViewController: ViewController {
     
     // MARK: - UI Properties
     
+    let dropdownView = FavoritesAnimalDropDownMenuView()
     private(set) lazy var tableView = UITableView().then {
         $0.sectionHeaderTopPadding = 0
         $0.backgroundColor = .white
@@ -48,39 +49,58 @@ final class FavoritesAnimalViewController: ViewController {
         viewModel.fetchAnimals()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        dropdownView.hideDropDownView(true)
+    }
+    
     // MARK: - Private Methods
     
     private func configureUI() {
-        view.addSubview(tableView)
+        self.dropdownView.selectedCategory = "All"
+        view.addSubviews(tableView, dropdownView)
+        dropdownView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
         tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(dropdownView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     
     private func addViewModelObservers() {
         viewModel.onStateChanged = { [weak self] state in
-            self?.view.loadingIndicator(isLoading: state.isLoading())
+            guard let `self` else {
+                return
+            }
+            self.view.loadingIndicator(isLoading: state.isLoading())
             switch state {
             case .loaded:
-                self?.tableView.reloadData()
+                let categories = self.viewModel.animals.toFavoritesAnimalCategories()
+                self.dropdownView.categories = categories
+                if !categories.contains(self.dropdownView.selectedCategory) {
+                    self.dropdownView.selectedCategory = "All"
+                }
+                self.updateFilteredAnimals(category: self.dropdownView.selectedCategory)
             default:
                 break
             }
         }
+        
+        dropdownView.onCategoryChanged = { [weak self] category in
+            self?.updateFilteredAnimals(category: category)
+        }
     }
     
-    private func updateSectionData(section: Int, rows: Int, selected: Bool) {
-        var indexPaths = [IndexPath]()
-        for row in 0..<rows {
-            indexPaths.append(IndexPath(row: row, section: section))
-        }
-        
-        if selected {
-            tableView.insertRows(at: indexPaths, with: .fade)
+    private func updateFilteredAnimals(category: String) {
+        if category == "All" {
+            viewModel.filteredAnimals = viewModel.animals
         } else {
-            tableView.deleteRows(at: indexPaths, with: .fade)
+            viewModel.filteredAnimals = viewModel.animals.filter { $0.type == category }
         }
+        self.tableView.reloadData()
     }
+    
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -88,7 +108,7 @@ final class FavoritesAnimalViewController: ViewController {
 extension FavoritesAnimalViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let animal = viewModel.animals[indexPath.section]
+        let animal = viewModel.filteredAnimals[indexPath.section]
         let vc = AnimalPicturesViewController.build(animal: animal)
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
@@ -96,7 +116,7 @@ extension FavoritesAnimalViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: FavoritesAnimalHeaderView.cellIdentifier) as? FavoritesAnimalHeaderView
-        let animalGroup = viewModel.animals[section]
+        let animalGroup = viewModel.filteredAnimals[section]
         header?.updateUI(name: animalGroup.name, type: animalGroup.type)
         
         return header
@@ -107,16 +127,16 @@ extension FavoritesAnimalViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.animals.count
+        return viewModel.filteredAnimals.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.animals[section].photos.count
+        return viewModel.filteredAnimals[section].photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cell: AnimalPicturesItemCell.self)
-        let animalPhoto = viewModel.animals[indexPath.section].photos[indexPath.row]
+        let animalPhoto = viewModel.filteredAnimals[indexPath.section].photos[indexPath.row]
         cell.updateUI(photo: animalPhoto)
         cell.onTapFavorite = { [weak self] selected in
             if !selected {

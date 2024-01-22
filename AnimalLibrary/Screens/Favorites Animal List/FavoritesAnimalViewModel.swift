@@ -12,6 +12,7 @@ final class FavoritesAnimalViewModel: ViewModel {
     @Injected(\.animalStorage) var animalStorage
     
     var animals: [AnimalModel] = []
+    var filteredAnimals: [AnimalModel] = []
     
     // MARK: - Animal Storage
     

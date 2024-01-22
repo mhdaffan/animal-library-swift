@@ -16,6 +16,18 @@ extension UIView {
         }
     }
     
+    func addCardShadow(shouldRasterize: Bool = false) {
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOpacity = 0.15
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 4
+        layer.cornerRadius = 4
+        if shouldRasterize {
+            layer.shouldRasterize = shouldRasterize
+            layer.rasterizationScale = UIScreen.main.scale
+        }
+    }
+    
     func showLoadingIndicator() {
         guard viewWithTag(100001) == nil else {
             return

@@ -17,4 +17,11 @@ extension UIButton.Configuration {
         return configuration
     }
     
+    static func titled(alignment: UIButton.Configuration.TitleAlignment, padding: CGFloat) -> UIButton.Configuration {
+        var configuration = UIButton.Configuration.plain()
+        configuration.titlePadding = padding
+        configuration.titleAlignment = alignment
+        
+        return configuration
+    }
 }

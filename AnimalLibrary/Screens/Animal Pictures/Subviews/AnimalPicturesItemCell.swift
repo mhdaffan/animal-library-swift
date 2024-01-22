@@ -50,6 +50,7 @@ final class AnimalPicturesItemCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
+        addDoubleTapGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -89,14 +90,25 @@ final class AnimalPicturesItemCell: UITableViewCell {
         favoriteButton.addAction(action, for: .primaryActionTriggered)
     }
     
+    private func addDoubleTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(onDoubleTapGesture))
+        gesture.numberOfTapsRequired = 2
+        contentView.addGestureRecognizer(gesture)
+    }
+    
     private func tapFavorite() {
         favoriteButton.isSelected.toggle()
+        updateFavoriteButtonBorderColor()
         onTapFavorite?(favoriteButton.isSelected)
     }
     
     func updateFavoriteButtonBorderColor() {
         let color: UIColor = favoriteButton.isSelected ? .red : .darkGray
         favoriteButton.layer.borderColor = color.cgColor
+    }
+    
+    @objc private func onDoubleTapGesture() {
+        tapFavorite()
     }
     
     // MARK: - Internal Methods

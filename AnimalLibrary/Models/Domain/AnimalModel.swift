@@ -17,3 +17,14 @@ struct AnimalModel: Equatable {
         return sizes.compactMap { $0 }.joined(separator: ", ")
     }
 }
+
+extension Array where Element == AnimalModel {
+    
+    func toFavoritesAnimalCategories() -> [String] {
+        var categories = ["All"]
+        categories.append(contentsOf: self.map { $0.type })
+        
+        return categories
+    }
+    
+}
