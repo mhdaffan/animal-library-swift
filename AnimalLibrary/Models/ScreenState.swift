@@ -31,4 +31,13 @@ extension ScreenState {
             return false
         }
     }
+    
+    func isFailed() -> Bool {
+        switch self {
+        case .failed:
+            return true
+        default:
+            return false
+        }
+    }
 }
