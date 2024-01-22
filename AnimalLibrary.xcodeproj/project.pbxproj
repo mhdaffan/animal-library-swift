@@ -16,6 +16,7 @@
 		363F94B22B5A8D4300DCA79D /* AnimalRespositoryMockImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F94B12B5A8D4300DCA79D /* AnimalRespositoryMockImpl.swift */; };
 		363F94B62B5A943F00DCA79D /* AnimalListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F94B52B5A943F00DCA79D /* AnimalListViewModelTest.swift */; };
 		363F94B82B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F94B72B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift */; };
+		365D9B022B5E46940032707E /* FavoritesAnimalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */; };
 		3676DA9A2B58E43000BCE1C0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DA992B58E43000BCE1C0 /* MainTabBarController.swift */; };
 		3676DA9F2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DA9E2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift */; };
 		3676DAA12B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DAA02B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift */; };
@@ -129,6 +130,7 @@
 		363F94B12B5A8D4300DCA79D /* AnimalRespositoryMockImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRespositoryMockImpl.swift; sourceTree = "<group>"; };
 		363F94B52B5A943F00DCA79D /* AnimalListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewModelTest.swift; sourceTree = "<group>"; };
 		363F94B72B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewControllerTest.swift; sourceTree = "<group>"; };
+		365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalHeaderView.swift; sourceTree = "<group>"; };
 		3676DA992B58E43000BCE1C0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3676DA9E2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewController.swift; sourceTree = "<group>"; };
 		3676DAA02B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewModel.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 		363F94B32B5A942400DCA79D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				365D9AFF2B5E44D10032707E /* Favorites Animal List */,
 				369549652B5C1E7200FC3155 /* Animal Pictures */,
 				363F94B42B5A942A00DCA79D /* Animal List */,
 			);
@@ -324,6 +327,22 @@
 				363F94B72B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift */,
 			);
 			path = "Animal List";
+			sourceTree = "<group>";
+		};
+		365D9AFF2B5E44D10032707E /* Favorites Animal List */ = {
+			isa = PBXGroup;
+			children = (
+				365D9B002B5E44F30032707E /* Subviews */,
+			);
+			path = "Favorites Animal List";
+			sourceTree = "<group>";
+		};
+		365D9B002B5E44F30032707E /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		3676DA982B58E42200BCE1C0 /* MainTabBar */ = {
@@ -1043,6 +1062,7 @@
 				369549782B5C2BC100FC3155 /* PhotoRepositoryMockImpl.swift in Sources */,
 				363F94B82B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift in Sources */,
 				369549762B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift in Sources */,
+				365D9B022B5E46940032707E /* FavoritesAnimalHeaderView.swift in Sources */,
 				367F94142B579F7800BAF633 /* NetworkServiceImplTest.swift in Sources */,
 				367841622B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift in Sources */,
 				369549682B5C1E9000FC3155 /* AnimalPicturesItemCellTest.swift in Sources */,
