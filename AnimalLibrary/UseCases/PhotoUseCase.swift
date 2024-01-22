@@ -7,6 +7,7 @@
 
 protocol PhotoUseCase {
     func search(query: String, completion: @escaping ((Result<AnimalPhotoList, Error>) -> Void))
+    func nextPageSearch(query: String, nextPage: String, completion: @escaping ((Result<AnimalPhotoList, Error>) -> Void))
 }
 
 struct PhotoUseCaseImpl: PhotoUseCase {
@@ -16,6 +17,22 @@ struct PhotoUseCaseImpl: PhotoUseCase {
     
     func search(query: String, completion: @escaping ((Result<AnimalPhotoList, Error>) -> Void)) {
         return repo.search(query: query, completion: { result in
+            switch result {
+            case .success(let response):
+                combineAnimalPhotoListWithLocalData(
+                    name: query,
+                    animalPhotoList: response.toAnimalPhotoList(),
+                    completion: { animalPhotoList in
+                        completion(.success(animalPhotoList))
+                    })
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        })
+    }
+    
+    func nextPageSearch(query: String, nextPage: String, completion: @escaping ((Result<AnimalPhotoList, Error>) -> Void)) {
+        return repo.nextPageSearch(nextPage: nextPage, completion: { result in
             switch result {
             case .success(let response):
                 combineAnimalPhotoListWithLocalData(

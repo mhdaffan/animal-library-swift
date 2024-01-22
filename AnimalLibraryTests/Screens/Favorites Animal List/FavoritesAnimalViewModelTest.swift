@@ -56,7 +56,7 @@ final class FavoritesAnimalViewModelTest: XCTestCase {
     
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> FavoritesAnimalViewModel {
         InjectedValue[\.animalStorage] = mockAnimalStorage
-        var sut = FavoritesAnimalViewModel()
+        let sut = FavoritesAnimalViewModel()
         trackForMemoryLeaks(sut)
         
         return sut

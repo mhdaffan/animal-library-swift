@@ -22,7 +22,7 @@ final class AnimalPicturesItemCellTest: XCTestCase {
     func test_updateUI_withFavoritePhoto() {
         assertUpdateUI(
             stubbedAnimalPhoto: AnimalPhoto.stub(favorited: true),
-            expButtonImage: UIImage.icHeartFill?.color(.darkGray),
+            expButtonImage: UIImage.icHeartFill?.color(.red),
             expButtonTitle: "Remove from favorite",
             expAlt: "Lion Lying on Ground in Wild Nature")
     }
@@ -33,7 +33,7 @@ final class AnimalPicturesItemCellTest: XCTestCase {
         
         assertUpdateUI(
             stubbedAnimalPhoto: stubbedAnimalPhoto,
-            expButtonImage: UIImage.icHeartFill?.color(.darkGray),
+            expButtonImage: UIImage.icHeartFill?.color(.red),
             expButtonTitle: "Remove from favorite",
             expAlt: "-")
     }

@@ -12,6 +12,7 @@ final class AnimalPicturesViewController: ViewController {
     
     // MARK: - UI Properties
     
+    let indicatorView = UIActivityIndicatorView(style: .medium)
     private(set) lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .white
         $0.separatorStyle = .none
@@ -55,18 +56,34 @@ final class AnimalPicturesViewController: ViewController {
     
     private func addViewModelObservers() {
         viewModel.onStateChanged = { [weak self] state in
-            self?.tableView.loadingIndicator(isLoading: state.isLoading())
+            self?.indicatorView.isHidden = !state.isLoading()
+            if state.isLoading() {
+                self?.indicatorView.startAnimating()
+            } else {
+                self?.indicatorView.stopAnimating()
+            }
             switch state {
-            case .loaded:
-                self?.tableView.reloadData()
             case .failed(let error):
                 print(error.localizedDescription)
             default:
                 break
             }
+            self?.tableView.reloadData()
         }
     }
     
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension AnimalPicturesViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let hasReachedBottom = scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)
+        if hasReachedBottom && !viewModel.state.isLoading(), let nextPageUrl = viewModel.photo?.nextPage {
+            viewModel.fetchNextPagePhotos(nextPageUrl: nextPageUrl)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -82,6 +99,14 @@ extension AnimalPicturesViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return viewModel.state.isLoading() ? indicatorView : nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return viewModel.state.isLoading() ? 50 : 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

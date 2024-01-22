@@ -18,6 +18,7 @@
 		363F94B82B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363F94B72B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift */; };
 		365D9B022B5E46940032707E /* FavoritesAnimalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */; };
 		365D9B042B5E4F2A0032707E /* FavoritesAnimalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B032B5E4F2A0032707E /* FavoritesAnimalViewModelTest.swift */; };
+		365D9B062B5E55B70032707E /* AnimalPhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B052B5E55B70032707E /* AnimalPhotoList.swift */; };
 		3676DA9A2B58E43000BCE1C0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DA992B58E43000BCE1C0 /* MainTabBarController.swift */; };
 		3676DA9F2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DA9E2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift */; };
 		3676DAA12B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DAA02B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift */; };
@@ -133,6 +134,7 @@
 		363F94B72B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewControllerTest.swift; sourceTree = "<group>"; };
 		365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalHeaderView.swift; sourceTree = "<group>"; };
 		365D9B032B5E4F2A0032707E /* FavoritesAnimalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewModelTest.swift; sourceTree = "<group>"; };
+		365D9B052B5E55B70032707E /* AnimalPhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPhotoList.swift; sourceTree = "<group>"; };
 		3676DA992B58E43000BCE1C0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3676DA9E2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewController.swift; sourceTree = "<group>"; };
 		3676DAA02B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewModel.swift; sourceTree = "<group>"; };
@@ -752,6 +754,7 @@
 				36C751B12B5837F200316715 /* AnimalModel.swift */,
 				36C751B32B58380000316715 /* AnimalPhoto.swift */,
 				363F94A52B5A293600DCA79D /* AnimalCharacteristicsModel.swift */,
+				365D9B052B5E55B70032707E /* AnimalPhotoList.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1002,6 +1005,7 @@
 				36C300852B566A170003CBA1 /* UseCaseInjectionKey.swift in Sources */,
 				36C300B12B568B160003CBA1 /* AnimalPicturesHeaderView.swift in Sources */,
 				367F94162B57A04B00BAF633 /* ExtensionResult.swift in Sources */,
+				365D9B062B5E55B70032707E /* AnimalPhotoList.swift in Sources */,
 				36C3006D2B564A1F0003CBA1 /* APIError.swift in Sources */,
 				36C300932B566E0A0003CBA1 /* ReusableViewCell.swift in Sources */,
 				36C300912B566CA40003CBA1 /* AnimalListItemCell.swift in Sources */,

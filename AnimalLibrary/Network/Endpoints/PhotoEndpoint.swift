@@ -7,18 +7,26 @@
 
 enum PhotoEndpoint {
     case search(query: String)
+    case nextPageSearch(nextPage: String)
 }
 
 extension PhotoEndpoint: Requestable {
     
     var baseURL: String {
-        "https://api.pexels.com"
+        switch self {
+        case .nextPageSearch:
+            ""
+        default:
+            "https://api.pexels.com"
+        }
     }
     
     var path: String {
         switch self {
         case .search:
             return "/v1/search"
+        case .nextPageSearch(let nextPage):
+            return nextPage
         }
     }
     
@@ -35,6 +43,8 @@ extension PhotoEndpoint: Requestable {
             return [
                 "query": query
             ]
+        default:
+            return [:]
         }
     }
     

@@ -5,10 +5,7 @@
 //  Created by Muhammad Affan on 16/01/24.
 //
 
-struct AnimalPhotoList: Equatable {
-    var photos: [AnimalPhoto]
-}
-
+import Foundation
 final class AnimalPicturesViewModel: ViewModel {
     
     var animal: AnimalModel
@@ -26,14 +23,33 @@ final class AnimalPicturesViewModel: ViewModel {
     // MARK: - Network Calls
     
     func fetchPhotos() {
-        onStateChanged?(.loading)
+        state = .loading
         photoUseCase.search(query: animal.name) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.photo = response
-                self?.onStateChanged?(.loaded)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self?.state = .loaded
+                })
+                
             case .failure(let error):
-                self?.onStateChanged?(.failed(error))
+                self?.state = .failed(error)
+            }
+        }
+    }
+    
+    func fetchNextPagePhotos(nextPageUrl: String) {
+        state = .loading
+        photoUseCase.nextPageSearch(query: animal.name, nextPage: nextPageUrl) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.photo?.photos.append(contentsOf: response.photos)
+                self?.photo?.nextPage = response.nextPage
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self?.state = .loaded
+                })
+            case .failure(let error):
+                self?.state = .failed(error)
             }
         }
     }

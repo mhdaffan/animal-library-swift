@@ -33,7 +33,7 @@ final class AnimalPicturesItemCell: UITableViewCell {
         $0.clipsToBounds = true
     }
     let favoriteButton = UIButton(configuration: .mediumImaged(imagePlacement: .leading)).then {
-        $0.setImage(.icHeartFill?.color(.darkGray), for: .selected)
+        $0.setImage(.icHeartFill?.color(.red), for: .selected)
         $0.setImage(.icHeart?.color(.darkGray), for: .normal)
         $0.setTitle("Add to favorite", for: .normal)
         $0.setTitle("Remove from favorite", for: .selected)

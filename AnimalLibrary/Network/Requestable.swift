@@ -42,7 +42,9 @@ extension Requestable {
         queryParameters.forEach {
             urlQueryItems.append(URLQueryItem(name: $0.key, value: "\($0.value)"))
         }
-        urlComponents.queryItems = !urlQueryItems.isEmpty ? urlQueryItems : nil
+        if !urlQueryItems.isEmpty {
+            urlComponents.queryItems = urlQueryItems
+        }
         
         guard let url = urlComponents.url else {
             throw APIError.badURL

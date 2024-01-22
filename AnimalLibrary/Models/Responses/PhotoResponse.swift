@@ -7,6 +7,12 @@
 
 struct PhotoListResponse: Codable {
     var photos: [PhotoResponse]
+    var nextPage: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case photos
+        case nextPage = "next_page"
+    }
 }
 
 struct PhotoResponse: Codable {
@@ -23,7 +29,10 @@ struct PhotoSourceResponse: Codable {
 extension PhotoListResponse {
     
     func toAnimalPhotoList() -> AnimalPhotoList {
-        return AnimalPhotoList(photos: photos.map { $0.toAnimalPhotoModel() })
+        return AnimalPhotoList(
+            photos: photos.map { $0.toAnimalPhotoModel() },
+            nextPage: nextPage
+        )
     }
 }
 
