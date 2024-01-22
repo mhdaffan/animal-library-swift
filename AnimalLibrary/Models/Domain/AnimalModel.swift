@@ -5,7 +5,7 @@
 //  Created by Muhammad Affan on 17/01/24.
 //
 
-struct AnimalModel {
+struct AnimalModel: Equatable {
     var name: String
     var type: String
     var locations: [String]

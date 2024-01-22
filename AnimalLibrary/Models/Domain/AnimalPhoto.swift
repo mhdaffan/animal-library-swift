@@ -5,10 +5,10 @@
 //  Created by Muhammad Affan on 17/01/24.
 //
 
-struct AnimalPhoto {
+struct AnimalPhoto: Equatable {
     let id: Int
     let photographer: String
-    let alt: String
+    var alt: String
     let url: String
     var isFavorited: Bool
 }

@@ -5,12 +5,12 @@
 //  Created by Muhammad Affan on 19/01/24.
 //
 
-struct AnimalCharacteristicsModel {
-    let habitat: String?
-    let lifespan: String?
-    let weight: String?
-    let height: String?
-    let length: String?
+struct AnimalCharacteristicsModel: Equatable {
+    var habitat: String?
+    var lifespan: String?
+    var weight: String?
+    var height: String?
+    var length: String?
 }
 
 extension AnimalCharacteristicsModel {

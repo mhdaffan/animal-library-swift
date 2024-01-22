@@ -22,6 +22,7 @@
 		3676DAA72B5925A500BCE1C0 /* AnimalEntityMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DAA62B5925A500BCE1C0 /* AnimalEntityMapping.swift */; };
 		3676DAA92B5925BC00BCE1C0 /* AnimalPhotoEntityMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DAA82B5925BC00BCE1C0 /* AnimalPhotoEntityMapping.swift */; };
 		3676DAAC2B59283D00BCE1C0 /* FavoritesAnimalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DAAB2B59283D00BCE1C0 /* FavoritesAnimalHeaderView.swift */; };
+		367841622B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367841612B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift */; };
 		367F94092B579EA400BAF633 /* AnimalResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F94082B579EA400BAF633 /* AnimalResponseMock.swift */; };
 		367F940B2B579EC700BAF633 /* PhotoListResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F940A2B579EC700BAF633 /* PhotoListResponseMock.swift */; };
 		367F940E2B579EF100BAF633 /* ExtensionXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367F940D2B579EF100BAF633 /* ExtensionXCTestCase.swift */; };
@@ -134,6 +135,7 @@
 		3676DAA62B5925A500BCE1C0 /* AnimalEntityMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalEntityMapping.swift; sourceTree = "<group>"; };
 		3676DAA82B5925BC00BCE1C0 /* AnimalPhotoEntityMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPhotoEntityMapping.swift; sourceTree = "<group>"; };
 		3676DAAB2B59283D00BCE1C0 /* FavoritesAnimalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalHeaderView.swift; sourceTree = "<group>"; };
+		367841612B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPicturesViewModelTest.swift; sourceTree = "<group>"; };
 		367F94082B579EA400BAF633 /* AnimalResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalResponseMock.swift; sourceTree = "<group>"; };
 		367F940A2B579EC700BAF633 /* PhotoListResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListResponseMock.swift; sourceTree = "<group>"; };
 		367F940D2B579EF100BAF633 /* ExtensionXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionXCTestCase.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				369549662B5C1E7C00FC3155 /* Subviews */,
+				367841612B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift */,
 			);
 			path = "Animal Pictures";
 			sourceTree = "<group>";
@@ -1041,6 +1044,7 @@
 				363F94B82B5A9BDA00DCA79D /* AnimalListViewControllerTest.swift in Sources */,
 				369549762B5C2B9F00FC3155 /* PhotoUseCaseImplTest.swift in Sources */,
 				367F94142B579F7800BAF633 /* NetworkServiceImplTest.swift in Sources */,
+				367841622B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift in Sources */,
 				369549682B5C1E9000FC3155 /* AnimalPicturesItemCellTest.swift in Sources */,
 				367F94122B579F1B00BAF633 /* NetworkSessionMockImpl.swift in Sources */,
 			);
