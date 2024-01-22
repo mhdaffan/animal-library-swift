@@ -19,6 +19,7 @@
 		365D9B022B5E46940032707E /* FavoritesAnimalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */; };
 		365D9B042B5E4F2A0032707E /* FavoritesAnimalViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B032B5E4F2A0032707E /* FavoritesAnimalViewModelTest.swift */; };
 		365D9B062B5E55B70032707E /* AnimalPhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B052B5E55B70032707E /* AnimalPhotoList.swift */; };
+		365D9B082B5E65FC0032707E /* AnimalPicturesViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D9B072B5E65FC0032707E /* AnimalPicturesViewControllerTest.swift */; };
 		3676DA9A2B58E43000BCE1C0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DA992B58E43000BCE1C0 /* MainTabBarController.swift */; };
 		3676DA9F2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DA9E2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift */; };
 		3676DAA12B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676DAA02B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift */; };
@@ -135,6 +136,7 @@
 		365D9B012B5E46940032707E /* FavoritesAnimalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalHeaderView.swift; sourceTree = "<group>"; };
 		365D9B032B5E4F2A0032707E /* FavoritesAnimalViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewModelTest.swift; sourceTree = "<group>"; };
 		365D9B052B5E55B70032707E /* AnimalPhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPhotoList.swift; sourceTree = "<group>"; };
+		365D9B072B5E65FC0032707E /* AnimalPicturesViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPicturesViewControllerTest.swift; sourceTree = "<group>"; };
 		3676DA992B58E43000BCE1C0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3676DA9E2B58E62900BCE1C0 /* FavoritesAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewController.swift; sourceTree = "<group>"; };
 		3676DAA02B58E63000BCE1C0 /* FavoritesAnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalViewModel.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 			children = (
 				369549662B5C1E7C00FC3155 /* Subviews */,
 				367841612B5CCBA600E629BC /* AnimalPicturesViewModelTest.swift */,
+				365D9B072B5E65FC0032707E /* AnimalPicturesViewControllerTest.swift */,
 			);
 			path = "Animal Pictures";
 			sourceTree = "<group>";
@@ -1061,6 +1064,7 @@
 				363F94B62B5A943F00DCA79D /* AnimalListViewModelTest.swift in Sources */,
 				369549742B5C2B8400FC3155 /* AnimalEntityStorageMockImpl.swift in Sources */,
 				369549622B5BF65C00FC3155 /* AnimalListItemCellTest.swift in Sources */,
+				365D9B082B5E65FC0032707E /* AnimalPicturesViewControllerTest.swift in Sources */,
 				367F94182B57A16E00BAF633 /* DataTransferServiceTest.swift in Sources */,
 				367F94092B579EA400BAF633 /* AnimalResponseMock.swift in Sources */,
 				363F94AE2B5A8CFA00DCA79D /* AnimalUseCaseImplTest.swift in Sources */,
